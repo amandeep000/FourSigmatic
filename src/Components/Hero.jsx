@@ -19,14 +19,14 @@ const Hero = () => {
         </div>
         {/* hero content */}
         <div className="w-full flex flex-col justify-center items-center order-2 lg:order-1 gap-3 lg:w-1/2">
-          <div className="w-full lg:ml-[25px] xl:max-w-[800px] xl:ml-[37px] ">
-            <h1 className="font-semibold text-3xl w-full text-[#59432D] pl-4 lg:pl-0 lg:text-[42px] lg:mb-5 lg:leading-tight">
+          <div className="w-[525px] lg:ml-[25px] xl:max-w-[800px] xl:ml-[37px]">
+            <h1 className="font-semibold text-center lg:text-start text-3xl w-full text-[#59432D] pl-4 lg:pl-0 lg:text-[42px] lg:mb-5 lg:leading-tight">
               Get Your Focus Without The Jitters
             </h1>
-            <p className="text-lg text-[#59432D] px-4 w-full mb-4 lg:px-0 lg:font-normal lg:mb-7 lg:text-xl">
+            <p className="text-lg text-center lg:text-start text-[#59432D] px-4 w-full mb-4 lg:px-0 lg:font-normal lg:mb-7 lg:text-xl">
               The Original Mushroom Coffee. Over 100 Million Cups Served
             </p>
-            <div className="flex justify-start items-center mb-2 gap-2">
+            <div className="flex justify-center lg:justify-start mx-auto items-center mb-2 gap-2">
               <span className="flex">
                 <FaStar color="gold" />
                 <FaStar color="gold" />
@@ -36,7 +36,7 @@ const Hero = () => {
               </span>
               <span>100,000+ Five Star Rating</span>
             </div>
-            <button className="w-full bg-[#8C6640] rounded-[5rem] mb-2 text-white lg:w-3/5 xl:w-2/5">
+            <button className="w-full mx-auto bg-[#8C6640] rounded-[5rem] mb-2 text-white lg:w-3/5 xl:w-2/5">
               <p className="px-[42px] py-[15px] w-full flex justify-between items-center text-lg lg:py-3 lg:px-8">
                 Try It Now
                 <span>
