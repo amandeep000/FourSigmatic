@@ -1,16 +1,9 @@
 import "./App.css";
-import CoffeeBenefits from "./Components/CoffeeBenefits";
-import Header from "./Components/Header";
-import Hero from "./Components/Hero";
+import { RouterProvider } from "react-router-dom";
+import Router from "./Components/routes/Router";
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Hero />
-      <CoffeeBenefits />
-    </>
-  );
+  return <RouterProvider router={Router} />;
 }
 
 export default App;
