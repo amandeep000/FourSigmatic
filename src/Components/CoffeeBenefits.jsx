@@ -23,10 +23,10 @@ const CoffeeBenefits = () => {
   return (
     <section className=" bg-[#EACAA5] pb-10 pt-10">
       <div
-        className="py-16 md:flex w-full bg-contain bg-no-repeat bg-left md:justify-end md:py-0"
-        style={{
-          backgroundImage: "url('/public/coffeebenefits/benefitsbg.webp')",
-        }}
+        className="py-16 md:flex w-full bg-contain bg-no-repeat bg-left md:justify-end md:py-0 md:bg-[url('/public/coffeebenefits/benefitsbg.webp')]"
+        // style={{
+        //   backgroundImage: "url('/public/coffeebenefits/benefitsbg.webp')",
+        // }}
       >
         <div className="px-4 md:px-0 lg:px-10 flex flex-col justify-center gap-9 font-[Recoleta] text-xl font-semibold lg:w-full">
           <div className="w-full flex flex-col justify-center items-center gap-3">
