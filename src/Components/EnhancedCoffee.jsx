@@ -3,76 +3,106 @@ import Button from "./Button";
 
 const EnhancedCoffee = () => {
   return (
-    <div className="flex flex-col justify-center items-center py-10">
-      <div className=" max-w-[1180px]">
+    <div className="w-full flex flex-col justify-center items-center py-10">
+      <div className="w-full max-w-[1180px] md:px-[46px]">
         <div className="px-8 flex flex-col w-full  justify-center items-center gap-y-6">
           <p className="text-[#F2983D] text-sm uppercase">coffee enhanced</p>
           <p className="text-[32px] text-[#59432D] font-semibold">
             Premium coffee with real benefits
           </p>
         </div>
-        <div className="flex justify-center items-center p-6 bg-[#FAF3E0]">
-          <div className="grid grid-cols-3 border border-black rounded-lg overflow-hidden bg-[#f9f5ed] shadow-lg">
-            {/* Header */}
-            <div className="p-4"></div>
-            <div className="p-4 flex flex-col items-center">
+        <div className="pt-11 pb-6 flex justify-center items-center">
+          {/* coffee quality column */}
+          <div className="flex flex-col flex-grow-1 lg:w-[340px] justify-center items-center pt-[110px] text-lg font-semibold text-[#59432D]">
+            <div className="h-[70px] flex justify-center items-center px-4 py-4 border border-black border-r-0 w-full border-b-0 rounded-tl-[10px] bg-[#fae3a3]">
+              <span>Coffee Quality</span>
+            </div>
+            <div className="h-[70px] flex justify-center items-center px-4 py-4 border border-black w-full border-b-0 bg-[#fae3a3]">
+              <span>No Jitters</span>
+            </div>
+            <div className="h-[70px] flex justify-center items-center px-4 py-4 border border-black w-full border-b-0 bg-[#fae3a3]">
+              <span>Positive Mood</span>
+            </div>
+            <div className="h-[70px] flex justify-center items-center px-4 py-4 border border-black w-full border-b-0 bg-[#fae3a3]">
+              <span>Gut Support</span>
+            </div>
+            <div className="h-[70px] flex justify-center items-center px-4 py-4 border border-black w-full border-b-0 bg-[#fae3a3]">
+              <span>Less Acidic</span>
+            </div>
+            <div className="h-[70px] flex justify-center items-center px-4 py-4 border border-black w-full border-b-0 bg-[#fae3a3]">
+              <span>Organic</span>
+            </div>
+            <div className="h-[70px] flex justify-center items-center px-4 py-4 border rounded-bl-[10px] border-black w-full bg-[#fae3a3]">
+              <span>100% Real Mushrooms</span>
+            </div>
+          </div>
+          {/* Premium coffee column */}
+          <div className="w-[120px] lg:w-[194px] flex flex-col justify-center items-center shadow-[0px_4px_30px_10px_rgb(249,245,237)] bg-[#F2983D] rounded-l-[10px] rounded-r-[10px]">
+            <div className="h-[110px] w-full flex flex-col justify-center items-center px-6">
               <img
-                src="/public/coffeebenefits/comparison1.webp"
-                alt="Premium Coffee"
-                className="w-16 h-16 mb-2"
+                src="/public/enhanced coffee/768.webp"
+                alt="coffee image"
+                className="w-[75px] lg:h-[100px]"
               />
-              <p className="font-bold text-lg text-center w-full pt-2 text-[rgb(89,67,75)]">
+            </div>
+            <div className="h-[70px] w-full bg-[#F2983D]flex justify-center items-center text-[#FFFFFFFF] border-b border-white">
+              <p className="text-center pt-3 lg:pt-5 lg:text-[20px] font-semibold">
                 Premium Arabica
               </p>
             </div>
-            <div className="p-4 flex flex-col items-center">
-              <img
-                src="/public/coffeebenefits/comparison2.webp"
-                alt="Regular Coffee"
-                className="w-16 h-16 mb-2"
-              />
-              <p className="font-bold text-lg text-center w-full pt-2 text-[rgb(89,67,75)]">
-                Low Quality
-              </p>
+            <div className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b border-white">
+              <img src="/public/coffeebenefits/true.svg" alt="icon" />
             </div>
-            {/* Rows */}
-            {[
-              { label: "No Jitters", premium: true, regular: false },
-              { label: "Positive Mood", premium: true, regular: false },
-              { label: "Gut Support", premium: true, regular: false },
-              { label: "Less Acidic", premium: true, regular: false },
-              { label: "Organic", premium: true, regular: false },
-            ].map((row, index) => (
-              <div
-                key={index}
-                className="col-span-3 grid grid-cols-3 border-t border-black text-[(rgb(89,67,75))]"
-              >
-                <div className="p-4 text-center font-semibold bg-[#fae4a6] border-black border-r">
-                  {row.label}
-                </div>
-                <div className="p-4 flex justify-center items-center bg-[#f2983d] border-black border-r">
-                  {row.premium ? "✔️" : "❌"}
-                </div>
-                <div className="p-4 flex justify-center items-center">
-                  {row.regular ? "✔️" : "❌"}
-                </div>
-              </div>
-            ))}
-            <div className="col-span-3 grid grid-cols-3 border-t border-black">
-              <div className="p-4 text-center bg-[#fae4a6] font-semibold border-black border-r">
-                100% Real Mushrooms
-              </div>
-              <div className="p-4 text-center bg-[#f2983d] font-semibold text-[(rgb(89,67,75))] border-black border-r">
-                We use only the fruiting body extracts, no cheap mycelium.
-              </div>
-              <div className="p-4 text-center font-semibold  text-[(rgb(89,67,75))]">
-                No mushrooms, no benefits.
-              </div>
+            <div className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b border-white">
+              <img src="/public/coffeebenefits/true.svg" alt="icon" />
+            </div>
+            <div className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b border-white">
+              <img src="/public/coffeebenefits/true.svg" alt="icon" />
+            </div>
+            <div className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b border-white">
+              <img src="/public/coffeebenefits/true.svg" alt="icon" />
+            </div>
+            <div className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b border-white">
+              <img src="/public/coffeebenefits/true.svg" alt="icon" />
+            </div>
+            <div className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b-0 border-[#59432D]">
+              <img src="/public/coffeebenefits/true.svg" alt="icon" />
+            </div>
+          </div>
+          {/* Low quality column */}
+          <div className="w-[120px] h-[110] lg:w-[194px] border-b-0 flex flex-col justify-center items-center bg-[#F9F5ED] rounded-l-[10px] rounded-r-[10px]">
+            <div className="h-[110px] w-full flex flex-col justify-center items-center py-3 px-6 ">
+              <img
+                src="/public/enhanced coffee/Ground_Bag_Bad_copy.avif"
+                alt="coffee bag image"
+                className="lg:h-[76px]"
+              />
+            </div>
+            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 rounded-tr-[10px] border-[#59432D] border-b-0">
+              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
+            </div>
+            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 border-[#59432D] border-b-0">
+              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
+            </div>
+            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 border-[#59432D] border-b-0">
+              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
+            </div>
+            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 border-[#59432D] border-b-0">
+              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
+            </div>
+            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 border-[#59432D] border-b-0">
+              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
+            </div>
+            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 border-[#59432D] border-b-0">
+              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
+            </div>
+            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 rounded-br-[10px] border-[#59432D] ">
+              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
             </div>
           </div>
         </div>
-        <div className="w-full mx-auto max-w-[500px] mt-4 ">
-          <button className="w-full py-3 px-9 bg-[#59432D] flex justify-center text-white rounded-[5rem] cursor-pointer items-center">
+        <div className="w-full mx-auto max-w-[500px] mt-4 px-8 pb-6 ">
+          <button className="w-full py-2 px-9 bg-[#59432D] flex justify-center text-white rounded-[5rem] cursor-pointer items-center">
             <p className="flex-1 font-semibold"> Upgrade your coffee</p>
             <span>
               <svg

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply box-border;
+  }
+}
+
 @font-face {
   font-family: "Recoleta";
   src: url(../src/assets/fonts/Fontspring-DEMO-recoletaalt-regular-iF663b21f697e65.woff);

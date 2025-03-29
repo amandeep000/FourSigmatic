@@ -1,17 +1,16 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="container mx-auto w-full ">
+    <div className="mx-auto w-full ">
       <div>
         <p className="text-[#59432D] text-center py-3 bg-[#FAE9C8]">
           Feel The Difference In 7 Days Or Get Your Money Back.|{" "}
           <span className="underline">Shop Now</span>
         </p>
       </div>
-      <div className="max-w-[1440px] mx-auto flex items-center px-[30px] h-[64px] lg:h-[96px]">
+      <div className="max-w-[1440px] mx-auto py-2 flex items-center px-[30px] h-[64px] lg:h-[96px]">
         {/* ham icon */}
         <div className="flex-1 lg:hidden cursor-pointer">
           <svg
