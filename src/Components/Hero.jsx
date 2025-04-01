@@ -1,5 +1,6 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import HeroSwiper from "./HeroSwiper";
 
 const Hero = () => {
   return (
@@ -14,12 +15,12 @@ const Hero = () => {
             playsInline // to make sure that video runs on mobile devices
             loop
             poster="/public/content/Placeholder_herobg.webp"
-            className="w-full rounded-lg h-full object-cover"
+            className="w-full lg:rounded-lg h-full object-cover"
           ></video>
         </div>
         {/* hero content */}
         <div className="w-full flex flex-col justify-center items-center order-2 lg:order-1 gap-3 lg:w-1/2">
-          <div className="w-[525px] lg:ml-[25px] xl:max-w-[800px] xl:ml-[37px]">
+          <div className="px-5 md:w-[525px] lg:ml-[25px] xl:max-w-[800px] xl:ml-[37px]">
             <h1 className="font-semibold text-center lg:text-start text-3xl w-full text-[#59432D] pl-4 lg:pl-0 lg:text-[42px] lg:mb-5 lg:leading-tight">
               Get Your Focus Without The Jitters
             </h1>
@@ -58,13 +59,9 @@ const Hero = () => {
               </p>
             </button>
           </div>
-          <div className="w-full px-8 mb-4">
-            <div className="lg:hidden w-full border border-[#59432D] px-7 py-1 order-3 text-center">
-              <p className="w-full text-[#59432D]">
-                " I love the coffee.It's delicious and helping me get my brain
-                started everyday ".
-              </p>
-              <p className="w-full text-[#707170]">Nitesh T.</p>
+          <div className="w-full px-5 sm:px-8 mb-4">
+            <div className="lg:hidden w-full border border-[#59432D] px-4 sm:px-7 py-1 order-3 text-center">
+              <HeroSwiper />
             </div>
           </div>
         </div>
