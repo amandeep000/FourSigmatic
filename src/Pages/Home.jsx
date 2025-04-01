@@ -5,6 +5,7 @@ import MushroomPower from "../Components/MushroomPower";
 import Achieve from "../Components/Achieve";
 import MushroomLegacy from "../Components/MushroomLegacy";
 import Testimonial from "../Components/Testimonial";
+import Experts from "../Components/Experts";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       {/* <MushroomLegacy /> */}
       <Testimonial />
       <Achieve />
+      <Experts />
     </div>
   );
 };
