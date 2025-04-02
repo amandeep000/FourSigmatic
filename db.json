@@ -128,6 +128,102 @@
       "currentPrice": "11.99€",
       "title": "Bestseller",
       "images": ["/public/latte/latte1_0.webp", "/public/latte/latte1_1.webp"]
+    },
+    {
+      "id": 12,
+      "category": "Protein",
+      "name": "Whey Protein - Chocolate",
+      "actualPrice": "39.99€",
+      "currentPrice": "34.99€",
+      "title": "Bestseller",
+      "images": [
+        "/public/Protien/protein1_0.webp",
+        "/public/Protien/protein1_1.webp"
+      ]
+    },
+    {
+      "id": 13,
+      "category": "Protein",
+      "name": "Plant-Based Protein - Vanilla",
+      "actualPrice": "44.99€",
+      "currentPrice": "39.99€",
+      "title": "New Arrival",
+      "images": [
+        "/public/Protien/protein2_0.webp",
+        "/public/Protien/protein2_1.webp"
+      ]
+    },
+    {
+      "id": 14,
+      "category": "Supplement",
+      "name": "Focus Organic Mushroom Blend",
+      "actualPrice": "19.99€",
+      "currentPrice": "16.99€",
+      "title": "Bestseller",
+      "images": [
+        "/public/supplements/suplements1_0.webp",
+        "/public/supplements/suplements1_1.webp"
+      ]
+    },
+    {
+      "id": 15,
+      "category": "Supplement",
+      "name": "Balance Organic Mushroom Blend",
+      "actualPrice": "24.99€",
+      "currentPrice": "20.99€",
+      "title": "New Arrival",
+      "images": [
+        "/public/supplements/suplements2_0.webp",
+        "/public/supplements/suplements2_1.webp"
+      ]
+    },
+    {
+      "id": 16,
+      "category": "Supplement",
+      "name": "Protect Organic Mushroom Blend",
+      "actualPrice": "21.99€",
+      "currentPrice": "18.99€",
+      "title": "Bestseller",
+      "images": [
+        "/public/supplements/suplements3_0.webp",
+        "/public/supplements/suplements3_1.webp"
+      ]
+    },
+    {
+      "id": 17,
+      "category": "Starter_kit",
+      "name": "Fan Favorites Kit",
+      "actualPrice": "21.99€",
+      "currentPrice": "18.99€",
+      "title": "Bestseller",
+      "images": [
+        "/public/starter_kits/starter1_0.webp",
+        "/public/starter_kits/starter1_0.webp"
+      ]
+    },
+    {
+      "id": 18,
+      "category": "Starter_kit",
+      "name": "Think Challenge Kit",
+      "actualPrice": "21.99€",
+      "currentPrice": "18.99€",
+      "title": "Bestseller",
+      "images": [
+        "/public/starter_kits/starter2_0.webp",
+        "/public/starter_kits/starter2_1.webp"
+      ]
+    },
+    {
+      "id": 19,
+      "category": "Bundle",
+      "name": "Bestsellers Bundle",
+      "actualPrice": "21.99€",
+      "currentPrice": "18.99€",
+      "title": "Bestseller",
+      "images": [
+        "/public/starter_kits/bundle1.webp",
+        "/public/starter_kits/bundle1.webp"
+      ]
     }
   ]
 }
