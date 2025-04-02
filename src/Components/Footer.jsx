@@ -4,11 +4,11 @@ import AccordionGroup from "./AccordionGroup";
 const Footer = () => {
   return (
     <footer className="pt-16 pb-5 relative mt-36 bg-[#8c663f]">
-      {/* <div className="absolute xs:top- sm:top-0 md:-top-4 left-0 w-full">
+      {/* <div className="absolute top-0 w-full max-w-full overflow-hidden">
         <img
           src="/public/enhanced coffee/svgviewer-png-output (1).svg"
           alt=""
-          className="rotate-180 w-full"
+          className="rotate-180 w-full h-auto object-cover"
         />
       </div> */}
       <div className="w-full h-full pt-6 px-6 lg:px-12 ">

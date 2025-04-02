@@ -33,13 +33,15 @@ Never liked coffee until trying Four Sigmatic. Now I drink it everyday, and add 
 
   return (
     <div className="relative my-6">
+      <h2 className="uppercase tracking-widest text-3xl underline underline-offset-8 decoration-orange-700 text-orange-500 font-mono mb-8 text-center">
+        Testimonials
+      </h2>
       <Swiper
         modules={[Navigation, Autoplay]}
         slidesPerView={1}
         centeredSlides={true}
         loop={true}
         speed={800}
-        allowTouchMove
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",

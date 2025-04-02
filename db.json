@@ -1,0 +1,133 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "Coffees",
+      "name": "Achieve Organic Coffee, Ground",
+      "actualPrice": "15.99€",
+      "currentPrice": "12.99€",
+      "title": "Bestseller",
+      "images": [
+        "/public/coffees/coffee1_0.webp",
+        "/public/coffees/coffee1_1.webp"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Coffees",
+      "name": "Achieve Organic Coffee, Instant",
+      "actualPrice": "10.99€",
+      "currentPrice": "8.99€",
+      "title": "New Arrival",
+      "images": [
+        "/public/coffees/coffee2_0.webp",
+        "/public/coffees/coffee2_1.webp"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Coffees",
+      "name": "Balance Organic Half Caf* Coffee, Ground",
+      "actualPrice": "29.99€",
+      "currentPrice": "24.99€",
+      "title": "Bestseller",
+      "images": [
+        "/public/coffees/coffee13_0.webp",
+        "/public/coffees/coffee3_1.webp"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "Coffees",
+      "name": "Think Organic Coffee, Whole Bean",
+      "actualPrice": "34.99€",
+      "currentPrice": "29.99€",
+      "title": "New Arrival",
+      "images": [
+        "/public/coffees/coffee4_0.webp",
+        "/public/coffees/coffee4_1.webp"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "Coffees",
+      "name": "Balance Organic Coffee, Instant",
+      "actualPrice": "19.99€",
+      "currentPrice": "15.99€",
+      "title": "Bestseller",
+      "images": [
+        "/public/coffees/coffee5_0.webp",
+        "/public/coffees/coffee5_1.webp"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "Coffees",
+      "name": "Shield Organic Coffee, Instant",
+      "actualPrice": "14.99€",
+      "currentPrice": "11.99€",
+      "title": "New Arrival",
+      "images": [
+        "/public/coffees/coffee6_0.webp",
+        "/public/coffees/coffee6_1.webp"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "Coffees",
+      "name": "Think Organic Coffee, Multiserve",
+      "actualPrice": "49.99€",
+      "currentPrice": "39.99€",
+      "title": "Bestseller",
+      "images": [
+        "/public/coffees/coffee7_0.webp",
+        "/public/coffees/coffee7_1.webp"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "Coffees",
+      "name": "Think Organic Coffee, Cold Brew Ground",
+      "actualPrice": "59.99€",
+      "currentPrice": "49.99€",
+      "title": "New Arrival",
+      "images": [
+        "/public/coffees/coffee8_0.webp",
+        "/public/coffees/coffee8_1.webp"
+      ]
+    },
+    {
+      "id": 9,
+      "category": "Creamer",
+      "name": "Think Organic Creamer, Vanilla Coconut",
+      "actualPrice": "12.99€",
+      "currentPrice": "9.99€",
+      "title": "Bestseller",
+      "images": [
+        "/public/creamer/creamer1_0.webp",
+        "/public/creamer/creamer1_1.webp"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "Creamer",
+      "name": "Think Organic Creamer, Cacao Coconut",
+      "actualPrice": "10.99€",
+      "currentPrice": "8.99€",
+      "title": "New Arrival",
+      "images": [
+        "/public/creamer/creamer1_0.webp",
+        "/public/creamer/creamer2_1.webp"
+      ]
+    },
+    {
+      "id": 11,
+      "category": "Latte",
+      "name": "Think Organic Coffee Latte",
+      "actualPrice": "14.99€",
+      "currentPrice": "11.99€",
+      "title": "Bestseller",
+      "images": ["/public/latte/latte1_0.webp", "/public/latte/latte1_1.webp"]
+    }
+  ]
+}

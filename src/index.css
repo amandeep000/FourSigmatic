@@ -18,3 +18,12 @@ body {
   font-family: "Recoleta", sans-serif;
   background-color: #f9f5ed;
 }
+
+/* .footer-before::before {
+  content: url("/public/enhanced coffee/svgviewer-png-output (1).svg");
+  left: 0;
+  top: -55.2px;
+  width: 100%;
+  position: absolute;
+  rotate: 180deg;
+} */
