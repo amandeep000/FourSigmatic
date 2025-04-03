@@ -7,6 +7,7 @@ import MushroomLegacy from "../Components/MushroomLegacy";
 import Testimonial from "../Components/Testimonial";
 import Experts from "../Components/Experts";
 import ProductCard from "../Components/ProductCard";
+import ProductShowcase from "../Components/ProductShowcase";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       {/* <ProductCard /> */}
       <CoffeeBenefits />
       <EnhancedCoffee />
+      <ProductShowcase />
       <Experts />
       <MushroomPower />
       {/* <MushroomLegacy /> */}
