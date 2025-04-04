@@ -15,12 +15,12 @@ const Home = () => {
       <Hero />
       {/* <ProductCard /> */}
       <CoffeeBenefits />
-      <EnhancedCoffee />
       <ProductShowcase />
+      <Testimonial />
+      <EnhancedCoffee />
       <Experts />
       <MushroomPower />
       {/* <MushroomLegacy /> */}
-      <Testimonial />
       <Achieve />
     </div>
   );

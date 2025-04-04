@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "vite",
+    "server": "json-server --watch db.json --port 5000",
     "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
@@ -12,6 +14,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
     "@tailwindcss/typography": "^0.5.16",
+    "keen-slider": "^6.8.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",

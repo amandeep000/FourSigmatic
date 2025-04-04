@@ -35,7 +35,7 @@ const expertData = [
 const Experts = () => {
   const [active, setActive] = useState(0);
   return (
-    <section className="py-12 px-4 sm:px-6">
+    <section className="py-12 px-4 sm:px-6 ">
       <div className="max-w-full mx-auto text-center relative">
         <h2 className="uppercase tracking-widest text-3xl underline underline-offset-8 decoration-orange-700 text-orange-500 font-mono mb-8">
           Backed By Experts
@@ -128,6 +128,8 @@ const Experts = () => {
           .swiper-button-next {
             background-color: white;
             color: #59483d;
+            position: absolute;
+            top: 60%;
             width: 40px;
             height: 40px;
             border-radius: 50%;

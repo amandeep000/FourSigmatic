@@ -10,7 +10,8 @@
       "images": [
         "/public/coffees/coffee1_0.webp",
         "/public/coffees/coffee1_1.webp"
-      ]
+      ],
+      "tags": ["Energy", "Bestseller", "Focus"]
     },
     {
       "id": 2,
@@ -22,7 +23,8 @@
       "images": [
         "/public/coffees/coffee2_0.webp",
         "/public/coffees/coffee2_1.webp"
-      ]
+      ],
+      "tags": ["Mood", "Refreshing", "Best Value"]
     },
     {
       "id": 3,
@@ -34,7 +36,8 @@
       "images": [
         "/public/coffees/coffee13_0.webp",
         "/public/coffees/coffee3_1.webp"
-      ]
+      ],
+      "tags": ["Focus", "Bestseller", "Mood"]
     },
     {
       "id": 4,
@@ -46,7 +49,8 @@
       "images": [
         "/public/coffees/coffee4_0.webp",
         "/public/coffees/coffee4_1.webp"
-      ]
+      ],
+      "tags": ["Energy", "Refreshing", "Best Value"]
     },
     {
       "id": 5,
@@ -58,7 +62,8 @@
       "images": [
         "/public/coffees/coffee5_0.webp",
         "/public/coffees/coffee5_1.webp"
-      ]
+      ],
+      "tags": ["Focus", "Bestseller", "Best Value"]
     },
     {
       "id": 6,
@@ -70,7 +75,8 @@
       "images": [
         "/public/coffees/coffee6_0.webp",
         "/public/coffees/coffee6_1.webp"
-      ]
+      ],
+      "tags": ["Energy", "Mood", "Best Value"]
     },
     {
       "id": 7,
@@ -82,7 +88,8 @@
       "images": [
         "/public/coffees/coffee7_0.webp",
         "/public/coffees/coffee7_1.webp"
-      ]
+      ],
+      "tags": ["Bestseller", "Refreshing", "Focus"]
     },
     {
       "id": 8,
@@ -94,7 +101,8 @@
       "images": [
         "/public/coffees/coffee8_0.webp",
         "/public/coffees/coffee8_1.webp"
-      ]
+      ],
+      "tags": ["Mood", "Energy", "Best Value"]
     },
     {
       "id": 9,
@@ -106,7 +114,8 @@
       "images": [
         "/public/creamer/creamer1_0.webp",
         "/public/creamer/creamer1_1.webp"
-      ]
+      ],
+      "tags": ["Best Value", "Refreshing", "Mood"]
     },
     {
       "id": 10,
@@ -118,7 +127,8 @@
       "images": [
         "/public/creamer/creamer1_0.webp",
         "/public/creamer/creamer2_1.webp"
-      ]
+      ],
+      "tags": ["Focus", "Energy", "Bestseller"]
     },
     {
       "id": 11,
@@ -127,7 +137,8 @@
       "actualPrice": "14.99€",
       "currentPrice": "11.99€",
       "title": "Bestseller",
-      "images": ["/public/latte/latte1_0.webp", "/public/latte/latte1_1.webp"]
+      "images": ["/public/latte/latte1_0.webp", "/public/latte/latte1_1.webp"],
+      "tags": ["Mood", "Bestseller", "Best Value"]
     },
     {
       "id": 12,
@@ -139,7 +150,8 @@
       "images": [
         "/public/Protien/protein1_0.webp",
         "/public/Protien/protein1_1.webp"
-      ]
+      ],
+      "tags": ["Energy", "Focus", "Best Value"]
     },
     {
       "id": 13,
@@ -151,7 +163,8 @@
       "images": [
         "/public/Protien/protein2_0.webp",
         "/public/Protien/protein2_1.webp"
-      ]
+      ],
+      "tags": ["Bestseller", "Refreshing", "Mood"]
     },
     {
       "id": 14,
@@ -163,7 +176,8 @@
       "images": [
         "/public/supplements/suplements1_0.webp",
         "/public/supplements/suplements1_1.webp"
-      ]
+      ],
+      "tags": ["Focus", "Energy", "Bestseller"]
     },
     {
       "id": 15,
@@ -175,7 +189,8 @@
       "images": [
         "/public/supplements/suplements2_0.webp",
         "/public/supplements/suplements2_1.webp"
-      ]
+      ],
+      "tags": ["Mood", "Refreshing", "Focus"]
     },
     {
       "id": 16,
@@ -187,7 +202,8 @@
       "images": [
         "/public/supplements/suplements3_0.webp",
         "/public/supplements/suplements3_1.webp"
-      ]
+      ],
+      "tags": ["Energy", "Best Value", "Focus"]
     },
     {
       "id": 17,
@@ -199,7 +215,8 @@
       "images": [
         "/public/starter_kits/starter1_0.webp",
         "/public/starter_kits/starter1_0.webp"
-      ]
+      ],
+      "tags": ["Best Value", "Mood", "Bestseller"]
     },
     {
       "id": 18,
@@ -211,7 +228,8 @@
       "images": [
         "/public/starter_kits/starter2_0.webp",
         "/public/starter_kits/starter2_1.webp"
-      ]
+      ],
+      "tags": ["Focus", "Bestseller", "Energy"]
     },
     {
       "id": 19,
@@ -223,7 +241,8 @@
       "images": [
         "/public/starter_kits/bundle1.webp",
         "/public/starter_kits/bundle1.webp"
-      ]
+      ],
+      "tags": ["Best Value", "Mood", "Refreshing"]
     }
   ]
 }
