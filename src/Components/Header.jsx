@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -29,13 +30,13 @@ const Header = () => {
           </svg>
         </div>
         <nav className="hidden lg:flex justify-start items-center gap-6 flex-1 text-[20px] text-[#59433D] font-medium">
-          {/* <Link to="#">Shop</Link>
-          <Link to="#">About</Link> */}
-          <a href="#">Shop</a>
-          <a href="#">About</a>
+          <Link to={"/shop"}>Shop</Link>
+          <Link to={"/about"}>About</Link>
         </nav>
         <div className="flex-1 flex justify-center items-center">
-          <img src={logo} alt="" width={155} height={40} />
+          <Link to={"/"}>
+            <img src={logo} alt="" width={155} height={40} />
+          </Link>
         </div>
 
         <div className="flex-1 flex justify-end items-center">

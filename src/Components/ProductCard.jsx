@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({
+  product,
+  width = "w-[330px]",
+  height = "h-[330px]",
+}) => {
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <div className="">
+    <div>
       <div
-        className="relative h-[315px] w-[315px] transition duration-300 ease-in-out overflow-hidden rounded-xl cursor-pointer"
+        className={`relative ${width} ${height} transition duration-300 ease-in-out overflow-hidden rounded-xl cursor-pointer`}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
@@ -43,7 +47,7 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
       </div>
-      <div className="mt-4 w-[315px]">
+      <div className={`mt-4 ${width}`}>
         <div className="flex justify-center items-center gap-x-3 text-[#59432D]">
           <span className="text-xl line-clamp-2 break-words font-semibold">
             {product.name}

@@ -88,7 +88,11 @@ const ProductShowcase = () => {
               key={product.id}
               className="keen-slider__slide flex justify-center"
             >
-              <ProductCard product={product} />
+              <ProductCard
+                product={product}
+                width="w-[350px]"
+                height="h-[350px]"
+              />
             </div>
           ))}
         </div>
