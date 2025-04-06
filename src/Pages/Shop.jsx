@@ -5,11 +5,6 @@ import ShopProductCard from "../Components/Shop/ShopProductCard";
 
 const Shop = () => {
   const { products } = useSelector((state) => state.products);
-  // const coffee = products.filter((item) => item.category === "Coffees");
-  // const creamers = products.filter((item) => item.category === "Creamer");
-  // const protein = products.filter((item) => item.category === "Protein");
-  // const supplement = products.filter((item) => item.category === "Supplement");
-  // console.log(coffee);
   const categoriesData = [
     {
       name: "Coffees",

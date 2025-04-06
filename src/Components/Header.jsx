@@ -42,14 +42,14 @@ const Header = () => {
         <div className="flex-1 flex justify-end items-center">
           <div className="hidden lg:flex justify-center items-center gap-10">
             {/* Search icon */}
-            <span>
+            <Link to={"/search"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="#59432D"
-                className="lg:size-7"
+                className="lg:size-7 cursor-pointer"
               >
                 <path
                   strokeLinecap="round"
@@ -57,7 +57,7 @@ const Header = () => {
                   d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                 />
               </svg>
-            </span>
+            </Link>
             {/* location icon */}
             <span>
               <svg

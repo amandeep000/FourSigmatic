@@ -9,9 +9,9 @@ const ShopProductCard = ({ category_name, product_category }) => {
           {category_name}
         </h2>
       </div>
-      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="flex gap-8 justify-center lg:justify-start items-center flex-wrap">
         {product_category.map((item) => (
-          <ProductCard product={item} width="w-[425px]" height="h-[425px]" />
+          <ProductCard product={item} width="w-[330px]" height="h-[330px]" />
         ))}
       </div>
     </div>

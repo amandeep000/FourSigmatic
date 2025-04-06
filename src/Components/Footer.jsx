@@ -3,14 +3,23 @@ import AccordionGroup from "./AccordionGroup";
 
 const Footer = () => {
   return (
-    <footer className="pt-16 pb-5 relative mt-36 bg-[#8c663f]">
-      {/* <div className="absolute top-0 w-full max-w-full overflow-hidden">
-        <img
-          src="/public/enhanced coffee/svgviewer-png-output (1).svg"
-          alt=""
-          className="rotate-180 w-full h-auto object-cover"
-        />
-      </div> */}
+    <footer className="relative pt-16 pb-5 mt-36 bg-[#8c663f]">
+      {/* Wave SVG Shape at Top */}
+
+      <div className="absolute top-0 left-0 w-full overflow-hidden z-10 leading-[0]">
+        <svg
+          className="relative block w-full h-[100px] overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#f9f5ed"
+            d="M 1440 80 V 72 C 1440 72 746.5 0 430 0 C 113.5 0 0 48 0 48 V -200000 H 1440 Z"
+          />
+        </svg>
+      </div>
+
       <div className="w-full h-full pt-6 px-6 lg:px-12 ">
         <div className="px-[30px]">
           {/* footer logo */}

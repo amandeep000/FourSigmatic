@@ -8,6 +8,7 @@ import { Layout } from "../index";
 import Home from "../../Pages/Home";
 import Shop from "../../Pages/Shop";
 import About from "../../Pages/About";
+import SearchPage from "../../Pages/SearchPage";
 import NotFound from "../../Pages/NotFound";
 
 const Router = createBrowserRouter(
@@ -16,6 +17,7 @@ const Router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/about" element={<About />} />
+      <Route path="/search" element={<SearchPage />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )

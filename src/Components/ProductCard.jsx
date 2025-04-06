@@ -43,7 +43,7 @@ const ProductCard = ({
                 : "transform translate-y-2 opacity-0"
             }`}
           >
-            Quick Buy
+            Buy
           </button>
         </div>
       </div>
