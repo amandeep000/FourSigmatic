@@ -20,13 +20,13 @@ const Shop = () => {
     {
       name: "Protein",
       title: "Protein",
-      paragraph: `Description for protein products.`,
+      paragraph: `Here’s the scoop: organic, plant-based protein that tastes great and benefits your body and mind.`,
       component: ShopProducts,
     },
     {
       name: "Supplement",
       title: "Supplements",
-      paragraph: `Information about our supplements.`,
+      paragraph: `Everything's better with mushrooms. Give your favorite rituals the power of adaptogens with our easy-to-add blends.`,
       component: ShopProducts,
     },
   ];
