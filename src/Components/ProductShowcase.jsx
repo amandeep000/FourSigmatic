@@ -17,30 +17,17 @@ const ProductShowcase = () => {
       spacing: 20,
     },
     breakpoints: {
-      "(min-width: 480px)": {
-        slides: { perView: 1.4, spacing: 20 },
-      },
-      "(min-width: 640px)": {
-        slides: { perView: 2, spacing: 20 },
-      },
-      "(min-width: 768px)": {
-        slides: { perView: 2.3, spacing: 24 },
-      },
-      "(min-width: 820px)": {
-        slides: { perView: 2.6, spacing: 28 },
-      },
-      "(min-width: 1024px)": {
-        slides: { perView: 3.3, spacing: 32 },
-      },
-      "(min-width: 1440px)": {
-        slides: { perView: 4.3, spacing: 36 },
-      },
-      "(min-width: 1920px)": {
-        slides: { perView: 5, spacing: 60 },
-      },
+      "(min-width: 480px)": { slides: { perView: 1.4, spacing: 20 } },
+      "(min-width: 640px)": { slides: { perView: 2, spacing: 20 } },
+      "(min-width: 768px)": { slides: { perView: 2.3, spacing: 24 } },
+      "(min-width: 820px)": { slides: { perView: 2.6, spacing: 28 } },
+      "(min-width: 1024px)": { slides: { perView: 3.3, spacing: 32 } },
+      "(min-width: 1440px)": { slides: { perView: 4.3, spacing: 36 } },
+      "(min-width: 1920px)": { slides: { perView: 5, spacing: 60 } },
     },
   });
 
+  // Fetch product data only if not loaded
   useEffect(() => {
     if (!isLoaded) {
       fetch("/db.json")
@@ -55,14 +42,12 @@ const ProductShowcase = () => {
     }
   }, [dispatch, isLoaded]);
 
-  // Recalculate Keen Slider after initial render and on window resize
+  // Recalculate slider dimensions after mount & on resize
   useEffect(() => {
-    // Delay to ensure DOM is ready
     const timeout = setTimeout(() => {
       instanceRef.current?.update();
     }, 100);
 
-    // Recalculate on resize/orientation change
     const handleResize = () => {
       instanceRef.current?.update();
     };
@@ -78,7 +63,7 @@ const ProductShowcase = () => {
   return (
     <section className="relative w-full overflow-hidden">
       <div className="py-8 relative max-w-[100vw]">
-        {/* Keen Slider Container */}
+        {/* Product Slider */}
         <div
           ref={sliderRef}
           className="keen-slider px-4 sm:px-6 lg:px-8 box-content"
@@ -97,23 +82,21 @@ const ProductShowcase = () => {
           ))}
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-2 z-10">
-          <button
-            onClick={() => instanceRef.current?.prev()}
-            className="w-10 h-10 bg-white text-[#59483D] rounded-full shadow-md hover:scale-110 transition-transform"
-          >
-            ←
-          </button>
-        </div>
-        <div className="absolute top-1/2 -translate-y-1/2 right-2 z-10">
-          <button
-            onClick={() => instanceRef.current?.next()}
-            className="w-10 h-10 bg-white text-[#59483D] rounded-full shadow-md hover:scale-110 transition-transform"
-          >
-            →
-          </button>
-        </div>
+        {/* Slider Navigation */}
+        <button
+          aria-label="Previous Slide"
+          onClick={() => instanceRef.current?.prev()}
+          className="absolute top-1/2 left-2 -translate-y-1/2 z-10 w-10 h-10 bg-white text-[#59483D] rounded-full shadow-md hover:scale-110 transition-transform"
+        >
+          ←
+        </button>
+        <button
+          aria-label="Next Slide"
+          onClick={() => instanceRef.current?.next()}
+          className="absolute top-1/2 right-2 -translate-y-1/2 z-10 w-10 h-10 bg-white text-[#59483D] rounded-full shadow-md hover:scale-110 transition-transform"
+        >
+          →
+        </button>
       </div>
     </section>
   );

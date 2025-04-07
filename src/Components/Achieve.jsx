@@ -6,28 +6,26 @@ const Achieve = () => {
       <section className="w-full flex flex-col justify-center items-center bg-[#FAE9C8]">
         <div className=" w-full max-w-[1000px] py-6 px-8 gap-y-6 ">
           <div className="flex flex-col justify-center items-center md:flex-row md:gap-x-6">
-            {/* ✅ Fixed: Added h-[300px] to constrain height */}
             <div className="w-full h-[300px] self-stretch ">
               <picture className="w-full h-full block ">
                 <source
-                  srcSet="/public/enhanced coffee/640.webp"
+                  srcSet="/enhanced coffee/640.webp"
                   media="(max-width: 640px)"
                 />
                 <source
-                  srcSet="/public/enhanced coffee/641-820.webp"
+                  srcSet="/enhanced coffee/641-820.webp"
                   media="(min-width: 641px) and (max-width: 820px)"
                 />
                 <source
-                  srcSet="/public/enhanced coffee/821-1024.webp"
+                  srcSet="/enhanced coffee/821-1024.webp"
                   media="(min-width: 821px) and (max-width: 1024px)"
                 />
                 <source
-                  srcSet="/public/enhanced coffee/1024.webp"
+                  srcSet="/enhanced coffee/1024.webp"
                   media="(min-width: 1025px)"
                 />
-                {/* ✅ Fixed: Added h-full w-full and changed object-contain to object-cover */}
                 <img
-                  src="/public/enhanced coffee/min640.webp"
+                  src="/enhanced coffee/min640.webp"
                   alt="image"
                   className="w-full h-full object-cover rounded-xl"
                 />
@@ -48,7 +46,7 @@ const Achieve = () => {
               <div className="w-full flex justify-start items-center ">
                 <button
                   type="button"
-                  className="bg-[#FFFFFF] md:w-[300px] md:text-white md:bg-[#59432D] md:text-whites rounded-3xl px-14 py-2"
+                  className="bg-[#FFFFFF] md:w-[300px] md:text-white md:bg-[#59432D] rounded-3xl px-14 py-2"
                 >
                   <p className=" text-xl ">Try it</p>
                 </button>
@@ -60,21 +58,21 @@ const Achieve = () => {
       <div className="relative bottom-0 -mb-[112px] z-40 pb-6">
         <picture className="absolute bottom-0 right-0">
           <source
-            srcset="/public/enhanced coffee/Flower.svg"
+            srcSet="/enhanced coffee/Flower.svg"
             media="(min-width: 1025px)"
           />
           <source
-            srcset="/public/enhanced coffee/flower821-1024.svg"
+            srcSet="/enhanced coffee/flower821-1024.svg"
             media="(min-width: 768px) and (max-width: 1024px)"
           />
           <img
-            src="/public/enhanced coffee/flowerstandard.svg"
+            src="/enhanced coffee/flowerstandard.svg"
             alt="Example Image"
-            class="w-full h-auto object-cover"
-          ></img>
+            className="w-full h-auto object-cover"
+          />
         </picture>
         <img
-          src="/public/enhanced coffee/wave1.svg"
+          src="/enhanced coffee/wave1.svg"
           alt="wave svg"
           className="w-full object-cover"
         />

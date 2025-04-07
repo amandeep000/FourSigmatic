@@ -40,65 +40,50 @@ const EnhancedCoffee = () => {
           <div className="w-[120px] lg:w-[194px] flex flex-col justify-center items-center shadow-[0px_4px_30px_10px_rgb(249,245,237)] bg-[#F2983D] rounded-l-[10px] rounded-r-[10px]">
             <div className="h-[110px] w-full flex flex-col justify-center items-center px-6">
               <img
-                src="/public/enhanced coffee/768.webp"
+                src="/enhanced coffee/768.webp"
                 alt="coffee image"
                 className="w-[75px] lg:h-[100px]"
               />
             </div>
-            <div className="h-[70px] w-full bg-[#F2983D]flex justify-center items-center text-[#FFFFFFFF] border-b border-white">
+            <div className="h-[70px] w-full bg-[#F2983D] flex justify-center items-center text-[#FFFFFFFF] border-b border-white">
               <p className="text-center pt-3 lg:pt-5 lg:text-[20px] font-semibold">
                 Premium Arabica
               </p>
             </div>
-            <div className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b border-white">
-              <img src="/public/coffeebenefits/true.svg" alt="icon" />
-            </div>
-            <div className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b border-white">
-              <img src="/public/coffeebenefits/true.svg" alt="icon" />
-            </div>
-            <div className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b border-white">
-              <img src="/public/coffeebenefits/true.svg" alt="icon" />
-            </div>
-            <div className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b border-white">
-              <img src="/public/coffeebenefits/true.svg" alt="icon" />
-            </div>
-            <div className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b border-white">
-              <img src="/public/coffeebenefits/true.svg" alt="icon" />
-            </div>
-            <div className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b-0 border-[#59432D]">
-              <img src="/public/coffeebenefits/true.svg" alt="icon" />
-            </div>
+            {Array(6)
+              .fill(null)
+              .map((_, index) => (
+                <div
+                  key={index}
+                  className="flex justify-center items-center h-[70px] w-full bg-[#F2983D] border-b border-white"
+                >
+                  <img src="/coffeebenefits/true.svg" alt="icon" />
+                </div>
+              ))}
           </div>
           {/* Low quality column */}
           <div className="w-[120px] h-[110] lg:w-[194px] border-b-0 flex flex-col justify-center items-center bg-[#F9F5ED] rounded-l-[10px] rounded-r-[10px]">
             <div className="h-[110px] w-full flex flex-col justify-center items-center py-3 px-6 ">
               <img
-                src="/public/enhanced coffee/Ground_Bag_Bad_copy.avif"
+                src="/enhanced coffee/Ground_Bag_Bad_copy.avif"
                 alt="coffee bag image"
                 className="lg:h-[76px]"
               />
             </div>
-            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 rounded-tr-[10px] border-[#59432D] border-b-0">
-              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
-            </div>
-            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 border-[#59432D] border-b-0">
-              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
-            </div>
-            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 border-[#59432D] border-b-0">
-              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
-            </div>
-            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 border-[#59432D] border-b-0">
-              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
-            </div>
-            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 border-[#59432D] border-b-0">
-              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
-            </div>
-            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 border-[#59432D] border-b-0">
-              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
-            </div>
-            <div className="flex justify-center items-center h-[70px] w-full border border-l-0 rounded-br-[10px] border-[#59432D] ">
-              <img src="/public/coffeebenefits/cross.svg" alt="icon" />
-            </div>
+            {Array(7)
+              .fill(null)
+              .map((_, index) => (
+                <div
+                  key={index}
+                  className={`flex justify-center items-center h-[70px] w-full border border-l-0 border-[#59432D] ${
+                    index === 0 ? "rounded-tr-[10px]" : ""
+                  } ${index === 6 ? "rounded-br-[10px]" : ""} ${
+                    index !== 6 ? "border-b-0" : ""
+                  }`}
+                >
+                  <img src="/coffeebenefits/cross.svg" alt="icon" />
+                </div>
+              ))}
           </div>
         </div>
         <div className="w-full mx-auto max-w-[500px] mt-4 px-8 pb-6 ">

@@ -34,12 +34,14 @@ const expertData = [
 
 const Experts = () => {
   const [active, setActive] = useState(0);
+
   return (
-    <section className="py-12 px-4 sm:px-6 ">
+    <section className="py-12 px-4 sm:px-6">
       <div className="max-w-full mx-auto text-center relative">
         <h2 className="uppercase tracking-widest text-3xl underline underline-offset-8 decoration-orange-700 text-orange-500 font-mono mb-8">
           Backed By Experts
         </h2>
+
         <Swiper
           modules={[Autoplay, Navigation]}
           slidesPerView={1}
@@ -57,46 +59,36 @@ const Experts = () => {
           }}
           onSlideChange={(swiper) => setActive(swiper.realIndex)}
           breakpoints={{
-            425: {
-              slidesPerView: 1,
-            },
-            640: {
-              slidesPerView: 1.5,
-            },
-            1024: {
-              slidesPerView: 2.5,
-            },
-            1440: {
-              slidesPerView: 3.5,
-            },
+            425: { slidesPerView: 1 },
+            640: { slidesPerView: 1.5 },
+            1024: { slidesPerView: 2.5 },
+            1440: { slidesPerView: 3.5 },
           }}
         >
           {expertData.map((data, index) => (
-            <div key={data.id} className="swiper-slide-wrapper">
-              <SwiperSlide key={data.id + "-image"} className="px-3">
+            <React.Fragment key={data.id}>
+              <SwiperSlide className="px-3">
                 <div className="flex justify-center items-center gap-4">
                   <div className="w-full max-h-[400px] rounded-xl">
                     <img
                       src={data.image}
                       alt={data.name}
                       className={`object-cover aspect-auto h-[400px] w-full rounded-xl object-top ${
-                        active === index ? "border-orange-500" : ""
+                        active === index ? "border-4 border-orange-500" : ""
                       }`}
                     />
                   </div>
                 </div>
               </SwiperSlide>
 
-              <SwiperSlide key={data.id + "-content"} className="px-3">
+              <SwiperSlide className="px-3">
                 <div className="px-6 pt-6 pb-3 w-full flex justify-center items-center bg-[#fae3a3] rounded-xl h-[400px]">
-                  <div className="">
+                  <div>
                     <div className="flex flex-col justify-evenly items-start h-[400px]">
                       <div className="flex justify-center items-center">
-                        {Array(5)
-                          .fill()
-                          .map((_, i) => (
-                            <FaStar fill="orange" key={i} />
-                          ))}
+                        {[...Array(5)].map((_, i) => (
+                          <FaStar fill="orange" key={i} />
+                        ))}
                       </div>
                       <div>
                         <h2 className="text-2xl font-semibold text-start text-[#59432D]">
@@ -118,11 +110,14 @@ const Experts = () => {
                   </div>
                 </div>
               </SwiperSlide>
-            </div>
+            </React.Fragment>
           ))}
         </Swiper>
+
+        {/* Navigation Buttons */}
         <div className="swiper-button-prev !bg-white !text-[#59483D]"></div>
         <div className="swiper-button-next !bg-white !text-[#59483D]"></div>
+
         <style jsx global>{`
           .swiper-button-prev,
           .swiper-button-next {

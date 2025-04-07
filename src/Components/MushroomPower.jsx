@@ -6,7 +6,7 @@ const MushroomPower = () => {
       <div className="py-16 px-[30px] flex flex-col justify-center items-center gap-y-5 md:px-12 lg:flex-row lg:justify-around lg:items-start">
         <div className="text-center max-w-[220px] flex flex-col justify-center items-center gap-y-4 ">
           <img
-            src="/public/coffeebenefits/mushroompower1.svg"
+            src="/coffeebenefits/mushroompower1.svg"
             alt="bulb icon"
             className=""
           />
@@ -18,10 +18,7 @@ const MushroomPower = () => {
           </p>
         </div>
         <div className="max-w-[220px] flex flex-col justify-center items-center gap-y-4 text-center">
-          <img
-            src="/public/coffeebenefits/mushroompower2.svg"
-            alt="coffee mug icon"
-          />
+          <img src="/coffeebenefits/mushroompower2.svg" alt="coffee mug icon" />
           <h3 className="font-semibold text-2xl tracking-wider text-[#59432D] mt-8">
             Tastes as good as it makes you feel
           </h3>
@@ -30,7 +27,7 @@ const MushroomPower = () => {
           </p>
         </div>
         <div className="max-w-[220px] flex flex-col justify-center items-center gap-y-4 text-center">
-          <img src="/public/coffeebenefits/mushroompower3.svg" alt="sun icon" />
+          <img src="/coffeebenefits/mushroompower3.svg" alt="sun icon" />
           <h3 className="font-semibold text-2xl tracking-wider text-[#59432D] mt-8">
             Helps with focus, energy, and mood
           </h3>

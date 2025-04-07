@@ -9,12 +9,12 @@ const Hero = () => {
         {/* hero video */}
         <div className="w-full order-1 lg:order-2 lg:w-1/2 lg:pr-[25px] lg:h-[340px] xl:pr-[34px] xl:h-[374px]">
           <video
-            src="/public/content/herobg.webm"
+            src="/content/herobg.webm"
             muted
             autoPlay
             playsInline // to make sure that video runs on mobile devices
             loop
-            poster="/public/content/Placeholder_herobg.webp"
+            poster="/content/Placeholder_herobg.webp"
             className="w-full lg:rounded-lg h-full object-cover"
           ></video>
         </div>
