@@ -7,10 +7,7 @@
       "actualPrice": "15.99€",
       "currentPrice": "12.99€",
       "title": "Bestseller",
-      "images": [
-        "/public/coffees/coffee1_0.webp",
-        "/public/coffees/coffee1_1.webp"
-      ],
+      "images": ["/coffees/coffee1_0.webp", "/coffees/coffee1_1.webp"],
       "tags": ["Energy", "Bestseller", "Focus"]
     },
     {
@@ -20,10 +17,7 @@
       "actualPrice": "10.99€",
       "currentPrice": "8.99€",
       "title": "New Arrival",
-      "images": [
-        "/public/coffees/coffee2_0.webp",
-        "/public/coffees/coffee2_1.webp"
-      ],
+      "images": ["/coffees/coffee2_0.webp", "/coffees/coffee2_1.webp"],
       "tags": ["Mood", "Refreshing", "Best Value"]
     },
     {
@@ -33,10 +27,7 @@
       "actualPrice": "29.99€",
       "currentPrice": "24.99€",
       "title": "Bestseller",
-      "images": [
-        "/public/coffees/coffee13_0.webp",
-        "/public/coffees/coffee3_1.webp"
-      ],
+      "images": ["/coffees/coffee13_0.webp", "/coffees/coffee3_1.webp"],
       "tags": ["Focus", "Bestseller", "Mood"]
     },
     {
@@ -46,10 +37,7 @@
       "actualPrice": "34.99€",
       "currentPrice": "29.99€",
       "title": "New Arrival",
-      "images": [
-        "/public/coffees/coffee4_0.webp",
-        "/public/coffees/coffee4_1.webp"
-      ],
+      "images": ["/coffees/coffee4_0.webp", "/coffees/coffee4_1.webp"],
       "tags": ["Energy", "Refreshing", "Best Value"]
     },
     {
@@ -59,10 +47,7 @@
       "actualPrice": "19.99€",
       "currentPrice": "15.99€",
       "title": "Bestseller",
-      "images": [
-        "/public/coffees/coffee5_0.webp",
-        "/public/coffees/coffee5_1.webp"
-      ],
+      "images": ["/coffees/coffee5_0.webp", "/coffees/coffee5_1.webp"],
       "tags": ["Focus", "Bestseller", "Best Value"]
     },
     {
@@ -72,10 +57,7 @@
       "actualPrice": "14.99€",
       "currentPrice": "11.99€",
       "title": "New Arrival",
-      "images": [
-        "/public/coffees/coffee6_0.webp",
-        "/public/coffees/coffee6_1.webp"
-      ],
+      "images": ["/coffees/coffee6_0.webp", "/coffees/coffee6_1.webp"],
       "tags": ["Energy", "Mood", "Best Value"]
     },
     {
@@ -85,10 +67,7 @@
       "actualPrice": "49.99€",
       "currentPrice": "39.99€",
       "title": "Bestseller",
-      "images": [
-        "/public/coffees/coffee7_0.webp",
-        "/public/coffees/coffee7_1.webp"
-      ],
+      "images": ["/coffees/coffee7_0.webp", "/coffees/coffee7_1.webp"],
       "tags": ["Bestseller", "Refreshing", "Focus"]
     },
     {
@@ -98,10 +77,7 @@
       "actualPrice": "59.99€",
       "currentPrice": "49.99€",
       "title": "New Arrival",
-      "images": [
-        "/public/coffees/coffee8_0.webp",
-        "/public/coffees/coffee8_1.webp"
-      ],
+      "images": ["/coffees/coffee8_0.webp", "/coffees/coffee8_1.webp"],
       "tags": ["Mood", "Energy", "Best Value"]
     },
     {
@@ -111,10 +87,7 @@
       "actualPrice": "12.99€",
       "currentPrice": "9.99€",
       "title": "Bestseller",
-      "images": [
-        "/public/creamer/creamer1_0.webp",
-        "/public/creamer/creamer1_1.webp"
-      ],
+      "images": ["/creamer/creamer1_0.webp", "/creamer/creamer1_1.webp"],
       "tags": ["Best Value", "Refreshing", "Mood"]
     },
     {
@@ -124,10 +97,7 @@
       "actualPrice": "10.99€",
       "currentPrice": "8.99€",
       "title": "New Arrival",
-      "images": [
-        "/public/creamer/creamer1_0.webp",
-        "/public/creamer/creamer2_1.webp"
-      ],
+      "images": ["/creamer/creamer1_0.webp", "/creamer/creamer2_1.webp"],
       "tags": ["Focus", "Energy", "Bestseller"]
     },
     {
@@ -137,7 +107,7 @@
       "actualPrice": "14.99€",
       "currentPrice": "11.99€",
       "title": "Bestseller",
-      "images": ["/public/latte/latte1_0.webp", "/public/latte/latte1_1.webp"],
+      "images": ["/latte/latte1_0.webp", "/latte/latte1_1.webp"],
       "tags": ["Mood", "Bestseller", "Best Value"]
     },
     {
@@ -147,10 +117,7 @@
       "actualPrice": "39.99€",
       "currentPrice": "34.99€",
       "title": "Bestseller",
-      "images": [
-        "/public/Protien/protein1_0.webp",
-        "/public/Protien/protein1_1.webp"
-      ],
+      "images": ["/Protien/protein1_0.webp", "/Protien/protein1_1.webp"],
       "tags": ["Energy", "Focus", "Best Value"]
     },
     {
@@ -160,10 +127,7 @@
       "actualPrice": "44.99€",
       "currentPrice": "39.99€",
       "title": "New Arrival",
-      "images": [
-        "/public/Protien/protein2_0.webp",
-        "/public/Protien/protein2_1.webp"
-      ],
+      "images": ["/Protien/protein2_0.webp", "/Protien/protein2_1.webp"],
       "tags": ["Bestseller", "Refreshing", "Mood"]
     },
     {
@@ -174,8 +138,8 @@
       "currentPrice": "16.99€",
       "title": "Bestseller",
       "images": [
-        "/public/supplements/suplements1_0.webp",
-        "/public/supplements/suplements1_1.webp"
+        "/supplements/suplements1_0.webp",
+        "/supplements/suplements1_1.webp"
       ],
       "tags": ["Focus", "Energy", "Bestseller"]
     },
@@ -187,8 +151,8 @@
       "currentPrice": "20.99€",
       "title": "New Arrival",
       "images": [
-        "/public/supplements/suplements2_0.webp",
-        "/public/supplements/suplements2_1.webp"
+        "/supplements/suplements2_0.webp",
+        "/supplements/suplements2_1.webp"
       ],
       "tags": ["Mood", "Refreshing", "Focus"]
     },
@@ -200,8 +164,8 @@
       "currentPrice": "18.99€",
       "title": "Bestseller",
       "images": [
-        "/public/supplements/suplements3_0.webp",
-        "/public/supplements/suplements3_1.webp"
+        "/supplements/suplements3_0.webp",
+        "/supplements/suplements3_1.webp"
       ],
       "tags": ["Energy", "Best Value", "Focus"]
     },
@@ -213,8 +177,8 @@
       "currentPrice": "18.99€",
       "title": "Bestseller",
       "images": [
-        "/public/starter_kits/starter1_0.webp",
-        "/public/starter_kits/starter1_0.webp"
+        "/starter_kits/starter1_0.webp",
+        "/starter_kits/starter1_0.webp"
       ],
       "tags": ["Best Value", "Mood", "Bestseller"]
     },
@@ -226,8 +190,8 @@
       "currentPrice": "18.99€",
       "title": "Bestseller",
       "images": [
-        "/public/starter_kits/starter2_0.webp",
-        "/public/starter_kits/starter2_1.webp"
+        "/starter_kits/starter2_0.webp",
+        "/starter_kits/starter2_1.webp"
       ],
       "tags": ["Focus", "Bestseller", "Energy"]
     },
@@ -238,10 +202,7 @@
       "actualPrice": "21.99€",
       "currentPrice": "18.99€",
       "title": "Bestseller",
-      "images": [
-        "/public/starter_kits/bundle1.webp",
-        "/public/starter_kits/bundle1.webp"
-      ],
+      "images": ["/starter_kits/bundle1.webp", "/starter_kits/bundle1.webp"],
       "tags": ["Best Value", "Mood", "Refreshing"]
     }
   ]

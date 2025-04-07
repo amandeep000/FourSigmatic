@@ -70,13 +70,10 @@ const About = () => {
             </p>
             <picture>
               <source
-                srcSet="/public/content/Health_Chart.webp"
+                srcSet="/content/Health_Chart.webp"
                 media="(min-width: 768px)"
               />
-              <img
-                src="/public/content/Health_Chart_mobile.webp"
-                alt="health chart"
-              />
+              <img src="/content/Health_Chart_mobile.webp" alt="health chart" />
             </picture>
           </div>
         </div>
@@ -86,11 +83,11 @@ const About = () => {
             <div className="aspect-[4/3] rounded-2xl overflow-hidden lg:w-1/2">
               <picture>
                 <source
-                  srcSet="/public/content/mission-lg.webp"
+                  srcSet="/content/mission-lg.webp"
                   media="(min-width:768px)"
                 />
                 <img
-                  src="/public/content/mission-mobile.webp"
+                  src="/content/mission-mobile.webp"
                   alt="coffee image"
                   className="object-cover object-center w-full "
                 />
@@ -121,7 +118,7 @@ const About = () => {
             <div className="aspect-[4/3] rounded-2xl overflow-hidden lg:w-1/2 lg:order-2">
               <picture>
                 <source
-                  srcSet="/public/content/team-lg.webp"
+                  srcSet="/content/team-lg.webp"
                   media="(min-width:768px)"
                 />
                 <img
