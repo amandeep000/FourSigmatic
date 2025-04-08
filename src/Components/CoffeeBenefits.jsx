@@ -21,7 +21,7 @@ const CoffeeBenefits = () => {
     },
   ];
   return (
-    <section className=" bg-[#EACAA5] pb-10 pt-10">
+    <section className="bg-[#EACAA5] pb-10 before:block before:bg-gradient-to-b before:from-[#f9f5ed] before:to-[#eacaa5] before:z-40 before:h-24">
       <div className="py-16 md:flex w-full bg-contain bg-no-repeat bg-left md:justify-end md:py-0 md:bg-[url('/coffeebenefits/benefitsbg.webp')]">
         <div className="px-4 md:px-0 lg:px-10 flex flex-col justify-center gap-9 font-[Recoleta] text-xl font-semibold lg:w-full">
           <div className="w-full flex flex-col justify-center items-center gap-3">
@@ -49,7 +49,7 @@ const CoffeeBenefits = () => {
                 </div>
               </div>
               {/* certifications */}
-              <div className="flex justify-center items-center gap-7 text-center text-[#59432D]">
+              <div className="flex justify-center items-center gap-7 text-center text-[#59432D] mt-3">
                 <div className="flex flex-col justify-center items-center gap-y-4 text-center w-full max-w-[155px] min-h-auto">
                   <img
                     src="/coffeebenefits/usdaorganic.svg"
@@ -66,8 +66,8 @@ const CoffeeBenefits = () => {
                   <p>Science-Backed Studies</p>
                 </div>
               </div>
-              {/*Upgrade my coffee button */}
-              <div className="px-[51px] pt-2">
+              {/*Upgrade your coffee button */}
+              <div className="px-[51px] pt-8">
                 <Button
                   type="button"
                   textColor="text-white"

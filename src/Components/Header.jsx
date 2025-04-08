@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="mx-auto w-full ">
+    <header className="mx-auto w-full bg-[#f9f5ed] relative">
       <div>
         <p className="text-[#59432D] text-center py-3 bg-[#FAE9C8]">
           Feel The Difference In 7 Days Or Get Your Money Back.|{" "}
           <span className="underline">Shop Now</span>
         </p>
       </div>
-      <div className="max-w-[1440px] mx-auto py-2 flex items-center px-[30px] h-[64px] lg:h-[96px]">
+      <div className="max-w-[1440px] mx-auto py-2 flex items-center px-[30px] h-[64px] lg:h-[96px] bg-red-500">
         {/* ham icon */}
         <div className="flex-1 lg:hidden cursor-pointer">
           <svg
@@ -117,7 +117,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

@@ -14,7 +14,6 @@ const SearchPage = () => {
       .then((res) => res.json())
       .then((data) => {
         setAllProducts(data.products);
-        console.log("initial data", allProducts);
       })
       .catch((err) => console.error("Failed to fetch db.json", err));
   }, []);

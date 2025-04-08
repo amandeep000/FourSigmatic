@@ -3,7 +3,7 @@ import React from "react";
 const Achieve = () => {
   return (
     <>
-      <section className="w-full flex flex-col justify-center items-center bg-[#FAE9C8]">
+      <section className="w-full flex flex-col justify-center items-center bg-[#FAE9C8]  before:block before:bg-gradient-to-b before:from-[#f9f5ed] before:to-[#fae9c8] before:z-40 before:h-24 before:w-full">
         <div className=" w-full max-w-[1000px] py-6 px-8 gap-y-6 ">
           <div className="flex flex-col justify-center items-center md:flex-row md:gap-x-6">
             <div className="w-full h-[300px] self-stretch ">

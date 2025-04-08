@@ -1,31 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import ProductCard from "./ProductCard";
 import { setProducts } from "./store/productSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const ProductShowcase = () => {
   const dispatch = useDispatch();
   const { products, isLoaded } = useSelector((state) => state.products);
 
-  const [sliderRef, instanceRef] = useKeenSlider({
-    loop: false,
-    mode: "snap",
-    slides: {
-      perView: 1.2,
-      spacing: 20,
-    },
-    breakpoints: {
-      "(min-width: 480px)": { slides: { perView: 1.4, spacing: 20 } },
-      "(min-width: 640px)": { slides: { perView: 2, spacing: 20 } },
-      "(min-width: 768px)": { slides: { perView: 2.3, spacing: 24 } },
-      "(min-width: 820px)": { slides: { perView: 2.6, spacing: 28 } },
-      "(min-width: 1024px)": { slides: { perView: 3.3, spacing: 32 } },
-      "(min-width: 1440px)": { slides: { perView: 4.3, spacing: 36 } },
-      "(min-width: 1920px)": { slides: { perView: 5, spacing: 60 } },
-    },
-  });
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   // Fetch product data only if not loaded
   useEffect(() => {
@@ -33,7 +20,6 @@ const ProductShowcase = () => {
       fetch("/db.json")
         .then((res) => res.json())
         .then((data) => {
-          console.log("Fetched data", data);
           dispatch(setProducts(data.products));
         })
         .catch((error) => {
@@ -42,58 +28,56 @@ const ProductShowcase = () => {
     }
   }, [dispatch, isLoaded]);
 
-  // Recalculate slider dimensions after mount & on resize
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      instanceRef.current?.update();
-    }, 100);
-
-    const handleResize = () => {
-      instanceRef.current?.update();
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      clearTimeout(timeout);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [instanceRef]);
-
   return (
     <section className="relative w-full overflow-hidden">
       <div className="py-8 relative max-w-[100vw]">
         {/* Product Slider */}
-        <div
-          ref={sliderRef}
-          className="keen-slider px-4 sm:px-6 lg:px-8 box-content"
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={20}
+          slidesPerView={1.2}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+          }}
+          breakpoints={{
+            480: { slidesPerView: 1.4 },
+            640: { slidesPerView: 1.8 },
+            768: { slidesPerView: 2, spaceBetween: 24 },
+            820: { slidesPerView: 2.3, spaceBetween: 28 },
+            1024: { slidesPerView: 2.8, spaceBetween: 32 },
+            1440: { slidesPerView: 3.7, spaceBetween: 36 },
+            1920: { slidesPerView: 5, spaceBetween: 60 },
+          }}
+          className="!px-0"
         >
           {products.slice(0, 7).map((product) => (
-            <div
-              key={product.id}
-              className="keen-slider__slide flex justify-center"
-            >
+            <SwiperSlide key={product.id} className="flex justify-center">
               <ProductCard
                 product={product}
                 width="w-[350px]"
                 height="h-[350px]"
               />
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
 
-        {/* Slider Navigation */}
+        {/* Slider Navigation Buttons */}
         <button
+          ref={prevRef}
           aria-label="Previous Slide"
-          onClick={() => instanceRef.current?.prev()}
-          className="absolute top-1/2 left-2 -translate-y-1/2 z-10 w-10 h-10 bg-white text-[#59483D] rounded-full shadow-md hover:scale-110 transition-transform"
+          className="absolute top-1/2 left-2 -translate-y-1/2 z-10 w-10 h-10 bg-white text-[#59432D] rounded-full shadow-md hover:scale-110 transition-transform"
         >
           ←
         </button>
         <button
+          ref={nextRef}
           aria-label="Next Slide"
-          onClick={() => instanceRef.current?.next()}
-          className="absolute top-1/2 right-2 -translate-y-1/2 z-10 w-10 h-10 bg-white text-[#59483D] rounded-full shadow-md hover:scale-110 transition-transform"
+          className="absolute top-1/2 right-2 -translate-y-1/2 z-10 w-10 h-10 bg-white text-[#59432D] rounded-full shadow-md hover:scale-110 transition-transform"
         >
           →
         </button>

@@ -87,7 +87,7 @@ const EnhancedCoffee = () => {
           </div>
         </div>
         <div className="w-full mx-auto max-w-[500px] mt-4 px-8 pb-6 ">
-          <button className="w-full py-2 px-9 bg-[#59432D] flex justify-center text-white rounded-[5rem] cursor-pointer items-center">
+          <button className="w-full py-4 px-9 bg-[#59432D] flex justify-center text-white rounded-[5rem] cursor-pointer items-center">
             <p className="flex-1 font-semibold"> Upgrade your coffee</p>
             <span>
               <svg

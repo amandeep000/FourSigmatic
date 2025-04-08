@@ -36,7 +36,7 @@ const Experts = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-12 px-4 sm:px-6">
+    <section className="py-12 pl-6 lg:pl-8 ">
       <div className="max-w-full mx-auto text-center relative">
         <h2 className="uppercase tracking-widest text-3xl underline underline-offset-8 decoration-orange-700 text-orange-500 font-mono mb-8">
           Backed By Experts
@@ -48,11 +48,7 @@ const Experts = () => {
           centeredSlides={true}
           loop={true}
           speed={800}
-          allowTouchMove={false}
-          navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          }}
+          allowTouchMove={true}
           autoplay={{
             delay: 4000,
             disableOnInteraction: false,
@@ -67,7 +63,7 @@ const Experts = () => {
         >
           {expertData.map((data, index) => (
             <React.Fragment key={data.id}>
-              <SwiperSlide className="px-3">
+              <SwiperSlide key={`${data.id}-image`} className="px-3">
                 <div className="flex justify-center items-center gap-4">
                   <div className="w-full max-h-[400px] rounded-xl">
                     <img
@@ -81,7 +77,7 @@ const Experts = () => {
                 </div>
               </SwiperSlide>
 
-              <SwiperSlide className="px-3">
+              <SwiperSlide key={`${data.id}-text`} className="px-3">
                 <div className="px-6 pt-6 pb-3 w-full flex justify-center items-center bg-[#fae3a3] rounded-xl h-[400px]">
                   <div>
                     <div className="flex flex-col justify-evenly items-start h-[400px]">
@@ -102,7 +98,7 @@ const Experts = () => {
                         <p className="underline underline-offset-2">
                           {data.name}
                         </p>
-                        <p className="bg-orange-500 text-white py-[3px] px-4 rounded-[6rem]">
+                        <p className="bg-orange-500 text-white py-[3px] px-5 rounded-[6rem]">
                           Expert
                         </p>
                       </div>
@@ -113,29 +109,6 @@ const Experts = () => {
             </React.Fragment>
           ))}
         </Swiper>
-
-        {/* Navigation Buttons */}
-        <div className="swiper-button-prev !bg-white !text-[#59483D]"></div>
-        <div className="swiper-button-next !bg-white !text-[#59483D]"></div>
-
-        <style jsx global>{`
-          .swiper-button-prev,
-          .swiper-button-next {
-            background-color: white;
-            color: #59483d;
-            position: absolute;
-            top: 60%;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-          }
-          .swiper-button-prev:after,
-          .swiper-button-next:after {
-            font-size: 20px;
-            font-weight: bold;
-          }
-        `}</style>
       </div>
     </section>
   );
