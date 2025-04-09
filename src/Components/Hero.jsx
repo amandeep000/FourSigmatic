@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="w-full">
       <div className="w-full flex flex-col lg:flex-row gap-2 lg:gap-6 lg:py-3">
         {/* hero video */}
-        <div className="w-full order-1 lg:order-2 lg:w-1/2 lg:pr-[25px] lg:h-[340px] xl:pr-[34px] xl:h-[374px]">
+        <div className="w-full relative z-0 order-1 lg:order-2 lg:w-1/2 lg:pr-[25px] lg:h-[340px] xl:pr-[34px] xl:h-[374px]">
           <video
             src="/content/herobg.webm"
             muted

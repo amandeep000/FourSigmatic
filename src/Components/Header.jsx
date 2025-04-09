@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
+  const [isMobilenavOpen, setIsMobilenavOpen] = useState(false);
+
   return (
-    <header className="mx-auto w-full bg-[#f9f5ed] relative">
+    <header className="mx-auto w-full bg-[#f9f5ed] sticky">
       <div>
         <p className="text-[#59432D] text-center py-3 bg-[#FAE9C8]">
           Feel The Difference In 7 Days Or Get Your Money Back.|{" "}
           <span className="underline">Shop Now</span>
         </p>
       </div>
-      <div className="max-w-[1440px] mx-auto py-2 flex items-center px-[30px] h-[64px] lg:h-[96px] bg-red-500">
+      <div className="max-w-[1440px] mx-auto py-2 flex items-center px-[30px] h-[64px] lg:h-[96px]">
         {/* ham icon */}
-        <div className="flex-1 lg:hidden cursor-pointer">
+        <button
+          type="button"
+          onClick={() => {
+            setIsMobilenavOpen(true);
+            console.log("Ham clicked");
+          }}
+          className="flex-1 lg:hidden cursor-pointer"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -28,7 +38,7 @@ const Header = () => {
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
           </svg>
-        </div>
+        </button>
         <nav className="hidden lg:flex justify-start items-center gap-6 flex-1 text-[20px] text-[#59433D] font-medium">
           <Link to={"/shop"}>Shop</Link>
           <Link to={"/about"}>About</Link>
@@ -117,6 +127,10 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <MobileNav
+        isMobilenavOpen={isMobilenavOpen}
+        setIsMobilenavOpen={setIsMobilenavOpen}
+      />
     </header>
   );
 };

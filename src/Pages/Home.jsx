@@ -11,7 +11,7 @@ import MobileNav from "../Components/MobileNav";
 const Home = () => {
   return (
     <div>
-      <MobileNav />
+      {/* <MobileNav /> */}
       <Hero />
       <CoffeeBenefits />
       <ProductShowcase />
