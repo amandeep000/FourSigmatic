@@ -7,7 +7,7 @@ const Header = () => {
   const [isMobilenavOpen, setIsMobilenavOpen] = useState(false);
 
   return (
-    <header className="mx-auto w-full bg-[#f9f5ed] sticky">
+    <header className="mx-auto w-full bg-[#f9f5ed] sticky z-10 ">
       <div>
         <p className="text-[#59432D] text-center py-3 bg-[#FAE9C8]">
           Feel The Difference In 7 Days Or Get Your Money Back.|{" "}
@@ -20,7 +20,6 @@ const Header = () => {
           type="button"
           onClick={() => {
             setIsMobilenavOpen(true);
-            console.log("Ham clicked");
           }}
           className="flex-1 lg:hidden cursor-pointer"
         >

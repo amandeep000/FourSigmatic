@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="relative pt-16 pb-5 mt-36 bg-[#8c663f]">
       {/* Wave SVG Shape at Top */}
 
-      <div className="absolute top-0 left-0 w-full overflow-hidden z-10 leading-[0]">
+      <div className="absolute top-0 left-0 w-full overflow-hidden z-0 leading-[0]">
         <svg
           className="relative block w-full h-[100px] overflow-hidden"
           xmlns="http://www.w3.org/2000/svg"
