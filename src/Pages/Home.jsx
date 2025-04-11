@@ -7,6 +7,7 @@ import Experts from "../Components/Experts";
 import ProductShowcase from "../Components/ProductShowcase";
 import Review from "../Components/Review";
 import MobileNav from "../Components/MobileNav";
+import Modal from "../Components/Modal";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <Testimonial />
       <Review />
       <Achieve />
+      <Modal />
     </div>
   );
 };
