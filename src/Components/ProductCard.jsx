@@ -36,7 +36,10 @@ const ProductCard = ({
             }`}
           />
 
-          <div className="z-10 w-full absolute bottom-2 px-2">
+          <Link
+            to={`/products/${product.id}`}
+            className="z-10 w-full absolute bottom-2 px-2"
+          >
             <button
               className={`w-full py-3 bg-white text-center text-sm font-semibold text-[#59432D] rounded-3xl transition-transform duration-300 ease-in-out hover:bg-[#8c663F] hover:text-[#FFFFFF] hover:transition-colors hover:duration-500 hover:ease-in-out ${
                 isHovering
@@ -44,9 +47,9 @@ const ProductCard = ({
                   : "transform translate-y-2 opacity-0"
               }`}
             >
-              Buy
+              Quick Buy
             </button>
-          </div>
+          </Link>
         </div>
         <div className={`mt-4 ${width}`}>
           <div className="flex justify-center items-center gap-x-3 text-[#59432D]">

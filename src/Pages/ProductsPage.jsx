@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa6";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const detailsCoffee = [
   { title: "Roast", description: "Medium Roast" },
   { title: "Type", description: "Instant" },
@@ -10,7 +10,7 @@ const detailsCoffee = [
   { title: "Usage", description: "Stir 1 packet in hot water instantly" },
 ];
 
-const ProductsPage = () => {
+const ProductsPage = ({ isModal = false }) => {
   const selectedPlanData = [
     "Delivery every 30 Days",
     "Delivery every 60 Days",
@@ -246,63 +246,94 @@ const ProductsPage = () => {
               }`}</span>
             </button>
           </div>
+          {/* amazon link section */}
+          {isModal && (
+            <div className="flex flex-col justify-center items-center gap-y-3 text-[#8C663F]">
+              <div className="flex flex-col lg:flex-row justify-center items-center gap-3 mb-2">
+                <a
+                  href="https://www.amazon.com/stores/FourSigmatic/page/BFD5C04F-8BEE-465A-8B09-51EAD476D2DC?lp_asin=B0756D1D39&ref_=ast_bln&store_ref=bl_ast_dp_brandLogo_sto"
+                  target="_blank"
+                  className="flex justify-center "
+                >
+                  <span className="font-semibold text-lg pr-2 cursor-pointer">
+                    Also Available On
+                  </span>{" "}
+                  <img
+                    src="/content/Amazon_logo.svg"
+                    alt="Amazon logo"
+                    width={64}
+                    height={20}
+                    className="self-end cursor-pointer"
+                  />
+                </a>
+                <span className="font-semibold">Satisfaction Guaranteed</span>
+              </div>
+              <span className="font-semibold">
+                Usually ships within 24 hours
+              </span>
+            </div>
+          )}
         </div>
       </div>
       {/* contnet section */}
-      <div className="py-16 w-full container max-w-[1440px] mx-auto">
-        <div className="px-[20px] w-full md:px-[50px]">
-          <span className="w-full block mb-12 font-mono text-orange-500 tracking-widers text-center">
-            DRINK BETTER, THINK BETTER
-          </span>
-          <span className="block w-full text-center mb-24 text-3xl lg:text-[40px] lg:leading-snug font-semibold text-[#59432D] tracking-wider">
-            Organic coffee powered by lion’s mane and chaga mushrooms. See
-            results in as little as 7 days with focus that tastes unbelievably
-            delicious.
-          </span>
-          <ul className="flex flex-col justify-center lg:flex-row lg:justify-around items-center w-full capitalize gap-6 text-[#59432D] text-2xl text-center font-semibold">
-            <li className="flex flex-col justify-center items-center max-w-[220px]">
-              <img
-                src="/Products_Shop/image1.png"
-                alt="enhanced mental focus"
-                width={110}
-                height={90}
-              />
-              <span className="mt-8">Enhanced Mental Focus</span>
-            </li>
-            <li className="flex flex-col justify-center items-center max-w-[220px]">
-              <img
-                src="/Products_Shop/image2.png"
-                alt="Boost of energy"
-                width={110}
-                height={90}
-              />
-              <span className="mt-8">Boost of Energy</span>
-            </li>
-            <li className="flex flex-col justify-center items-center max-w-[220px]">
-              <img
-                src="/Products_Shop/sun.svg"
-                alt="enhanced mental focus"
-                width={110}
-                height={90}
-              />
-              <span className="mt-8">Long-Term Positive mood</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      {/* product details */}
-      <div className="container py-24 px-5 md:px-[50px] grid grid-cols-1 gap-y-10 lg:grid-cols-3 gap-x-10">
-        {detailsCoffee.map((item, index) => (
-          <div key={index} className="flex flex-col gap-y-4">
-            <span className="text-sm text-[#F2983D] font-mono font-semibold tracking-widest lg:text-base">
-              {item.title}
+      {!isModal && (
+        <div className="py-16 w-full container max-w-[1440px] mx-auto">
+          <div className="px-[20px] w-full md:px-[50px]">
+            <span className="w-full block mb-12 font-mono text-orange-500 tracking-widers text-center">
+              DRINK BETTER, THINK BETTER
             </span>
-            <span className="text-[28px] text-[#59432D] font-semibold">
-              {item.description}
+            <span className="block w-full text-center mb-24 text-3xl lg:text-[40px] lg:leading-snug font-semibold text-[#59432D] tracking-wider">
+              Organic coffee powered by lion’s mane and chaga mushrooms. See
+              results in as little as 7 days with focus that tastes unbelievably
+              delicious.
             </span>
+            <ul className="flex flex-col justify-center lg:flex-row lg:justify-around items-center w-full capitalize gap-6 text-[#59432D] text-2xl text-center font-semibold">
+              <li className="flex flex-col justify-center items-center max-w-[220px]">
+                <img
+                  src="/Products_Shop/image1.png"
+                  alt="enhanced mental focus"
+                  width={110}
+                  height={90}
+                />
+                <span className="mt-8">Enhanced Mental Focus</span>
+              </li>
+              <li className="flex flex-col justify-center items-center max-w-[220px]">
+                <img
+                  src="/Products_Shop/image2.png"
+                  alt="Boost of energy"
+                  width={110}
+                  height={90}
+                />
+                <span className="mt-8">Boost of Energy</span>
+              </li>
+              <li className="flex flex-col justify-center items-center max-w-[220px]">
+                <img
+                  src="/Products_Shop/sun.svg"
+                  alt="enhanced mental focus"
+                  width={110}
+                  height={90}
+                />
+                <span className="mt-8">Long-Term Positive mood</span>
+              </li>
+            </ul>
           </div>
-        ))}
-      </div>
+        </div>
+      )}
+      {/* product details */}
+      {!isModal && (
+        <div className="container py-24 px-5 md:px-[50px] grid grid-cols-1 gap-y-10 lg:grid-cols-3 gap-x-10">
+          {detailsCoffee.map((item, index) => (
+            <div key={index} className="flex flex-col gap-y-4">
+              <span className="text-sm text-[#F2983D] font-mono font-semibold tracking-widest lg:text-base">
+                {item.title}
+              </span>
+              <span className="text-[28px] text-[#59432D] font-semibold">
+                {item.description}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 };
