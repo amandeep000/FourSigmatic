@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa6";
 import { Link, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart, openCart } from "../Components/store/cartSlice";
 const detailsCoffee = [
   { title: "Roast", description: "Medium Roast" },
   { title: "Type", description: "Instant" },
@@ -22,6 +24,7 @@ const ProductsPage = ({ isModal = false }) => {
   const [selectedPlan, setSelectedPlan] = useState(selectedPlanData[0]);
   const [packActive, setPackActive] = useState(null);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const handleClick = (id) => {
     setPackActive(id);
@@ -42,15 +45,15 @@ const ProductsPage = ({ isModal = false }) => {
         console.error("There is an error fetching data", error);
       });
   }, []);
-
-  useEffect(() => {
-    console.log("this is found product", product);
-  }, [product]);
-
+  // to show loading product
   if (!product) {
     return <div className="p-4 text-3xl text-red-700">Loading Product...</div>;
   }
 
+  const addToCartHandler = () => {
+    dispatch(addToCart(product));
+    dispatch(openCart());
+  };
   return (
     <section className="my-4">
       <div className="flex flex-col gap-10 lg:flex-row px-[50px]">
@@ -160,7 +163,7 @@ const ProductsPage = ({ isModal = false }) => {
                 />
                 <label
                   htmlFor="subscribe"
-                  className="font-sans w-full flex justify-between "
+                  className="font-sans w-full flex justify-between cursor-pointer "
                 >
                   <span className="pl-3">SUBSCRIBE & Save</span>
                   <div>
@@ -213,7 +216,7 @@ const ProductsPage = ({ isModal = false }) => {
               </div>
               {/* one time payment */}
               <div
-                className={`flex justify-start items-center w-full transition duration-300 ease-in-out ${
+                className={`flex justify-start items-center w-full transition duration-300 ease-in-out cursor-pointer ${
                   sellingPlan === "oneTime" ? "opacity-100" : "opacity-50"
                 }`}
               >
@@ -227,7 +230,7 @@ const ProductsPage = ({ isModal = false }) => {
                 />
                 <label
                   htmlFor="purchase"
-                  className={`font-sans w-full flex justify-between`}
+                  className={`font-sans w-full flex justify-between cursor-pointer`}
                 >
                   <span className={`uppercase font-mono pl-3`}>
                     One time purchase
@@ -238,7 +241,10 @@ const ProductsPage = ({ isModal = false }) => {
                 </label>
               </div>
             </div>
-            <button className="bg-[#8C663F] w-full rounded-3xl border border-[#8C663F] text-lg text-white py-3">
+            <button
+              onClick={addToCartHandler}
+              className="bg-[#8C663F] w-full rounded-3xl border border-[#8C663F] text-lg text-white py-3"
+            >
               <span>{`Get Started - ${
                 sellingPlan === "subscribe"
                   ? `${product.currentPrice}`

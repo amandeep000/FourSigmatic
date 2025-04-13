@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import MobileNav from "./MobileNav";
+import { openCart } from "./store/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
   const [isMobilenavOpen, setIsMobilenavOpen] = useState(false);
-
+  const dispatch = useDispatch();
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   return (
     <header className="mx-auto w-full bg-[#f9f5ed] sticky z-10 ">
       <div>
@@ -110,11 +113,19 @@ const Header = () => {
             </span>
           </div>
           {/* cart icon */}
-          <div className="lg:border-l-slate-300 lg:border-l-2 lg:pl-5">
+          <div
+            onClick={() => dispatch(openCart())}
+            className="relative lg:border-l-slate-300 lg:border-l-2 lg:pl-5 cursor-pointer"
+          >
             <img
               src="/src/assets/shopping_cart_24dp_59432D_FILL0_wght400_GRAD0_opsz24.svg"
               alt="cart icon"
             />
+            {totalQuantity > 0 && (
+              <div className="absolute -top-[11px] -right-[5px] p-2 bg-orange-400 rounded-full h-4 w-4 flex justify-center items-center">
+                <p className="text-white text-[8px]">{totalQuantity}</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
