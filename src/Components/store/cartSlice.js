@@ -50,7 +50,7 @@ const cartSlice = createSlice({
     },
     removeFromCart: (state, action) => {
       const itemToRemove = state.cartItem.find(
-        (item) => item.id === action.payload.id
+        (item) => item.id === action.payload
       );
       if (itemToRemove) {
         const numericPrice = getNumericPrice(itemToRemove.currentPrice);
@@ -58,13 +58,13 @@ const cartSlice = createSlice({
         state.totalPrice -= numericPrice * itemToRemove.quantity;
 
         state.cartItem = state.cartItem.filter(
-          (item) => item.id !== action.payload.id
+          (item) => item.id !== action.payload
         );
         saveCartToLocalStorage(state);
       }
     },
     incrementQuantity: (state, action) => {
-      const item = state.cartItem.find((item) => item.id === action.payload.id);
+      const item = state.cartItem.find((item) => item.id === action.payload);
       if (item) {
         const numericPrice = getNumericPrice(item.currentPrice);
         item.quantity += 1;
@@ -74,7 +74,7 @@ const cartSlice = createSlice({
       saveCartToLocalStorage(state);
     },
     decrementQuantity: (state, action) => {
-      const item = state.cartItem.find((item) => item.id === action.payload.id);
+      const item = state.cartItem.find((item) => item.id === action.payload);
       if (item) {
         const numericPrice = getNumericPrice(item.currentPrice);
         if (item.quantity > 1) {
@@ -83,7 +83,7 @@ const cartSlice = createSlice({
           state.totalQuantity -= 1;
         } else {
           state.cartItem = state.cartItem.filter(
-            (item) => item.id !== action.payload.id
+            (item) => item.id !== action.payload
           );
           state.totalQuantity -= 1;
           state.totalPrice -= numericPrice;
