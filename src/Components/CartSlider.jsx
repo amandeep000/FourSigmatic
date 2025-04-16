@@ -43,7 +43,7 @@ const CartSlider = () => {
 
       {/* Sliding Cart Panel */}
       <div
-        className={`fixed top-0 right-0 h-full w-[452px] bg-white shadow-lg z-50
+        className={`fixed top-0 right-0 h-full md:w-[452px] bg-white shadow-lg z-50
         transform transition-transform duration-300 ease-in-out
         ${isCartOpen ? "translate-x-0" : "translate-x-full"}
       `}
@@ -89,7 +89,7 @@ const CartSlider = () => {
           </div>
 
           {/* cart products */}
-          <div className="w-full py-5 mx-5">
+          <div className="w-full py-5 px-5 ">
             <ul className="w-full flex flex-1 flex-col gap-4">
               {cartItem.map((product) => (
                 <li
@@ -173,6 +173,7 @@ const CartSlider = () => {
           {/* checkout button */}
           <Link
             to={"/cart"}
+            onClick={() => dispatch(closeCart())}
             className="border-2 border-white bg-[#f2983d] rounded-[7rem] w-full flex justify-center gap-3 items-center mb-4"
           >
             <span className="text-xl font-semibold py-3 px-4">

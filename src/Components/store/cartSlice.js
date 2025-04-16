@@ -26,6 +26,12 @@ const getNumericPrice = (price) => {
   return price;
 };
 
+// Optional extra safety helper
+const clampCartValues = (state) => {
+  state.totalQuantity = Math.max(0, state.totalQuantity);
+  state.totalPrice = Math.max(0, state.totalPrice);
+};
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -46,6 +52,7 @@ const cartSlice = createSlice({
       }
       state.totalQuantity += 1;
       state.totalPrice += numericPrice;
+      clampCartValues(state);
       saveCartToLocalStorage(state);
     },
     removeFromCart: (state, action) => {
@@ -54,12 +61,19 @@ const cartSlice = createSlice({
       );
       if (itemToRemove) {
         const numericPrice = getNumericPrice(itemToRemove.currentPrice);
-        state.totalQuantity -= itemToRemove.quantity;
-        state.totalPrice -= numericPrice * itemToRemove.quantity;
+        state.totalQuantity = Math.max(
+          0,
+          state.totalQuantity - itemToRemove.quantity
+        );
+        state.totalPrice = Math.max(
+          0,
+          state.totalPrice - numericPrice * itemToRemove.quantity
+        );
 
         state.cartItem = state.cartItem.filter(
           (item) => item.id !== action.payload
         );
+        clampCartValues(state);
         saveCartToLocalStorage(state);
       }
     },
@@ -71,6 +85,7 @@ const cartSlice = createSlice({
         state.totalPrice += numericPrice;
         state.totalQuantity += 1;
       }
+      clampCartValues(state);
       saveCartToLocalStorage(state);
     },
     decrementQuantity: (state, action) => {
@@ -79,16 +94,17 @@ const cartSlice = createSlice({
         const numericPrice = getNumericPrice(item.currentPrice);
         if (item.quantity > 1) {
           item.quantity -= 1;
-          state.totalPrice -= numericPrice;
-          state.totalQuantity -= 1;
+          state.totalPrice = Math.max(0, state.totalPrice - numericPrice);
+          state.totalQuantity = Math.max(0, state.totalQuantity - 1);
         } else {
           state.cartItem = state.cartItem.filter(
             (item) => item.id !== action.payload
           );
-          state.totalQuantity -= 1;
-          state.totalPrice -= numericPrice;
+          state.totalQuantity = Math.max(0, state.totalQuantity - 1);
+          state.totalPrice = Math.max(0, state.totalPrice - numericPrice);
         }
       }
+      clampCartValues(state);
       saveCartToLocalStorage(state);
     },
     clearCart: (state) => {
