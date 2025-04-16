@@ -133,7 +133,7 @@ const Header = () => {
             aria-label="Open cart"
           >
             <img
-              src="/src/assets/shopping_cart_24dp_59432D_FILL0_wght400_GRAD0_opsz24.svg"
+              src="/content/shopping_cart_24dp_59432D_FILL0_wght400_GRAD0_opsz24.svg"
               alt="Cart icon"
               loading="lazy"
             />

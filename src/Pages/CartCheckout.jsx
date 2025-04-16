@@ -229,15 +229,12 @@ const CartCheckout = () => {
                 </span>
                 <span>
                   <img
-                    src="/public/content/mastercard.1c4_lyMp.svg"
+                    src="/content/mastercard.1c4_lyMp.svg"
                     alt="master card icon"
                   />
                 </span>
                 <span>
-                  <img
-                    src="/public/content/visa.sxIq5Dot.svg"
-                    alt="visa card icon"
-                  />
+                  <img src="/content/visa.sxIq5Dot.svg" alt="visa card icon" />
                 </span>
               </div>
             </div>
