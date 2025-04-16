@@ -36,9 +36,12 @@ const Experts = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-12 pl-6 lg:pl-8 ">
+    <section className="py-12 pl-6 lg:pl-8" aria-labelledby="experts-heading">
       <div className="max-w-full mx-auto text-center relative">
-        <h2 className="uppercase tracking-widest text-3xl underline underline-offset-8 decoration-orange-700 text-orange-500 font-mono mb-8">
+        <h2
+          id="experts-heading"
+          className="uppercase tracking-widest text-3xl underline underline-offset-8 decoration-orange-700 text-orange-500 font-mono mb-8"
+        >
           Backed By Experts
         </h2>
 
@@ -68,7 +71,9 @@ const Experts = () => {
                   <div className="w-full max-h-[400px] rounded-xl">
                     <img
                       src={data.image}
-                      alt={data.name}
+                      alt={`Photo of ${data.name}`}
+                      loading="lazy"
+                      aria-label={`Photo of expert ${data.name}`}
                       className={`object-cover aspect-auto h-[400px] w-full rounded-xl object-top ${
                         active === index ? "border-4 border-orange-500" : ""
                       }`}
@@ -78,10 +83,16 @@ const Experts = () => {
               </SwiperSlide>
 
               <SwiperSlide key={`${data.id}-text`} className="px-3">
-                <div className="px-6 pt-6 pb-3 w-full flex justify-center items-center bg-[#fae3a3] rounded-xl h-[400px]">
+                <div
+                  className="px-6 pt-6 pb-3 w-full flex justify-center items-center bg-[#fae3a3] rounded-xl h-[400px]"
+                  aria-label={`Expert opinion from ${data.name}`}
+                >
                   <div>
                     <div className="flex flex-col justify-evenly items-start h-[400px]">
-                      <div className="flex justify-center items-center">
+                      <div
+                        className="flex justify-center items-center"
+                        aria-label="5 star rating"
+                      >
                         {[...Array(5)].map((_, i) => (
                           <FaStar fill="orange" key={i} />
                         ))}

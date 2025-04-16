@@ -9,7 +9,10 @@ const ProductCard = ({
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <Link to={`/products/${product.id}`}>
+    <Link
+      to={`/products/${product.id}`}
+      aria-label={`View details for ${product.name}`}
+    >
       <div>
         <div
           className={`relative ${width} ${height} transition duration-300 ease-in-out overflow-hidden rounded-xl cursor-pointer`}
@@ -24,6 +27,7 @@ const ProductCard = ({
           <img
             src={product.images[0]}
             alt={product.name}
+            loading="lazy"
             className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-300 ${
               isHovering ? "opacity-0" : "opacity-100"
             }`}
@@ -31,6 +35,7 @@ const ProductCard = ({
           <img
             src={product.images[1]}
             alt={product.name}
+            loading="lazy"
             className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-300 ${
               isHovering ? "opacity-100" : "opacity-0"
             }`}
@@ -39,6 +44,7 @@ const ProductCard = ({
           <Link
             to={`/products/${product.id}`}
             className="z-10 w-full absolute bottom-2 px-2"
+            aria-label={`Buy ${product.name}`}
           >
             <button
               className={`w-full py-3 bg-white text-center text-sm font-semibold text-[#59432D] rounded-3xl transition-transform duration-300 ease-in-out hover:bg-[#8c663F] hover:text-[#FFFFFF] hover:transition-colors hover:duration-500 hover:ease-in-out ${
@@ -47,7 +53,7 @@ const ProductCard = ({
                   : "transform translate-y-2 opacity-0"
               }`}
             >
-              Quick Buy
+              Buy
             </button>
           </Link>
         </div>
@@ -58,10 +64,10 @@ const ProductCard = ({
             </span>
             <div className="flex justify-center items-center gap-y-1">
               <span className="line-through text-gray-300 text-xl pr-1 font-semibold">
-                ${product.actualPrice}
+                {product.actualPrice}
               </span>
               <span className="text-xl font-semibold">
-                ${product.currentPrice}
+                {product.currentPrice}
               </span>
             </div>
           </div>

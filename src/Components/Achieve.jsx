@@ -3,11 +3,15 @@ import React from "react";
 const Achieve = () => {
   return (
     <>
-      <section className="w-full flex flex-col justify-center items-center bg-[#FAE9C8]  before:block before:bg-gradient-to-b before:from-[#f9f5ed] before:to-[#fae9c8] before:z-40 before:h-24 before:w-full">
-        <div className=" w-full max-w-[1000px] py-6 px-8 gap-y-6 ">
+      <section
+        className="w-full flex flex-col justify-center items-center bg-[#FAE9C8]  before:block before:bg-gradient-to-b before:from-[#f9f5ed] before:to-[#fae9c8] before:z-40 before:h-24 before:w-full"
+        aria-label="Achieve Mushroom Coffee Promotion"
+      >
+        <div className="w-full max-w-[1000px] py-6 px-8 gap-y-6 ">
           <div className="flex flex-col justify-center items-center md:flex-row md:gap-x-6">
+            {/* Image container */}
             <div className="w-full h-[300px] self-stretch ">
-              <picture className="w-full h-full block ">
+              <picture className="w-full h-full block" aria-hidden="true">
                 <source
                   srcSet="/enhanced coffee/640.webp"
                   media="(max-width: 640px)"
@@ -26,15 +30,16 @@ const Achieve = () => {
                 />
                 <img
                   src="/enhanced coffee/min640.webp"
-                  alt="image"
+                  alt="Cup of mushroom coffee"
                   className="w-full h-full object-cover rounded-xl"
                 />
               </picture>
             </div>
 
+            {/* Content block */}
             <div className="flex flex-col justify-start items-center gap-y-3 text-[#59432D]">
               <div className="flex justify-start w-full mt-5">
-                <h2 className=" text-3xl font-bold md:text-4xl">
+                <h2 className="text-3xl font-bold md:text-4xl">
                   Achieve Mushroom Coffee
                 </h2>
               </div>
@@ -47,15 +52,19 @@ const Achieve = () => {
                 <button
                   type="button"
                   className="bg-[#FFFFFF] md:w-[300px] md:text-white md:bg-[#59432D] rounded-3xl px-14 py-2"
+                  aria-label="Try Achieve Mushroom Coffee"
                 >
-                  <p className=" text-xl ">Try it</p>
+                  <p className="text-xl">Try it</p>
                 </button>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <div className="relative bottom-0 -mb-[112px] z-40 pb-6">
+      <div
+        className="relative bottom-0 -mb-[112px] z-40 pb-6"
+        aria-hidden="true"
+      >
         <picture className="absolute bottom-0 right-0">
           <source
             srcSet="/enhanced coffee/Flower.svg"
@@ -67,13 +76,13 @@ const Achieve = () => {
           />
           <img
             src="/enhanced coffee/flowerstandard.svg"
-            alt="Example Image"
+            alt=""
             className="w-full h-auto object-cover"
           />
         </picture>
         <img
           src="/enhanced coffee/wave1.svg"
-          alt="wave svg"
+          alt=""
           className="w-full object-cover"
         />
       </div>

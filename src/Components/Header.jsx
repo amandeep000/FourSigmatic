@@ -9,12 +9,13 @@ const Header = () => {
   const [isMobilenavOpen, setIsMobilenavOpen] = useState(false);
   const dispatch = useDispatch();
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+
   return (
-    <header className="mx-auto w-full bg-[#f9f5ed] sticky z-10 ">
+    <header className="mx-auto w-full bg-[#f9f5ed] sticky top-0 z-50">
       <div>
         <p className="text-[#59432D] text-center py-3 bg-[#FAE9C8]">
-          Feel The Difference In 7 Days Or Get Your Money Back.|{" "}
-          <Link to={"/shop"} className="underline">
+          Feel The Difference In 7 Days Or Get Your Money Back.{" "}
+          <Link to={"/shop"} className="underline" aria-label="Shop now">
             Shop Now
           </Link>
         </p>
@@ -23,9 +24,8 @@ const Header = () => {
         {/* ham icon */}
         <button
           type="button"
-          onClick={() => {
-            setIsMobilenavOpen(true);
-          }}
+          aria-label="Open mobile navigation"
+          onClick={() => setIsMobilenavOpen(true)}
           className="flex-1 lg:hidden cursor-pointer"
         >
           <svg
@@ -35,6 +35,7 @@ const Header = () => {
             strokeWidth={1.5}
             stroke="#59432D"
             className="size-7"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -43,20 +44,31 @@ const Header = () => {
             />
           </svg>
         </button>
+
         <nav className="hidden lg:flex justify-start items-center gap-6 flex-1 text-[20px] text-[#59433D] font-medium">
-          <Link to={"/shop"}>Shop</Link>
-          <Link to={"/about"}>About</Link>
+          <Link to={"/shop"} aria-label="Shop page">
+            Shop
+          </Link>
+          <Link to={"/about"} aria-label="About page">
+            About
+          </Link>
         </nav>
+
         <div className="flex-1 flex justify-center items-center">
-          <Link to={"/"}>
-            <img src={logo} alt="" width={155} height={40} />
+          <Link to={"/"} aria-label="Homepage">
+            <img
+              src={logo}
+              alt="Website logo"
+              width={155}
+              height={40}
+              loading="lazy"
+            />
           </Link>
         </div>
 
         <div className="flex-1 flex justify-end items-center">
           <div className="hidden lg:flex justify-center items-center gap-10">
-            {/* Search icon */}
-            <Link to={"/search"}>
+            <Link to={"/search"} aria-label="Search">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -64,6 +76,7 @@ const Header = () => {
                 strokeWidth={1.5}
                 stroke="#59432D"
                 className="lg:size-7 cursor-pointer"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -72,8 +85,7 @@ const Header = () => {
                 />
               </svg>
             </Link>
-            {/* location icon */}
-            <span>
+            <span aria-label="Location">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -81,6 +93,7 @@ const Header = () => {
                 strokeWidth={1.5}
                 stroke="#59432D"
                 className="lg:size-7"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -94,8 +107,7 @@ const Header = () => {
                 />
               </svg>
             </span>
-            {/* user icon */}
-            <span className="pr-4">
+            <span className="pr-4" aria-label="User account">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -103,6 +115,7 @@ const Header = () => {
                 strokeWidth={1.5}
                 stroke="#59432D"
                 className="lg:size-7"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -112,14 +125,17 @@ const Header = () => {
               </svg>
             </span>
           </div>
+
           {/* cart icon */}
           <div
             onClick={() => dispatch(openCart())}
             className="relative lg:border-l-slate-300 lg:border-l-2 lg:pl-5 cursor-pointer"
+            aria-label="Open cart"
           >
             <img
               src="/src/assets/shopping_cart_24dp_59432D_FILL0_wght400_GRAD0_opsz24.svg"
-              alt="cart icon"
+              alt="Cart icon"
+              loading="lazy"
             />
             {totalQuantity > 0 && (
               <div className="absolute -top-[11px] -right-[5px] p-2 bg-orange-400 rounded-full h-4 w-4 flex justify-center items-center">

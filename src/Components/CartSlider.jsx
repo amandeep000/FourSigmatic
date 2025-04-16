@@ -20,7 +20,6 @@ const CartSlider = () => {
   let [totalActualPrice, setTotalActualPrice] = useState(0);
 
   useEffect(() => {
-    console.log(cartItem.length);
     let total = 0;
     cartItem.map((price) => {
       const match = price.actualPrice.match(/[\d.]+/);
@@ -29,6 +28,7 @@ const CartSlider = () => {
     });
     setTotalActualPrice(total);
   }, [cartItem, totalActualPrice]);
+
   return (
     <>
       {/* Overlay Backdrop */}
@@ -39,33 +39,38 @@ const CartSlider = () => {
             : "opacity-0 pointer-events-none"
         }`}
         onClick={() => dispatch(closeCart())}
+        aria-hidden={!isCartOpen}
       />
 
       {/* Sliding Cart Panel */}
       <div
-        className={`fixed top-0 right-0 h-full md:w-[452px] bg-white shadow-lg z-50
-        transform transition-transform duration-300 ease-in-out
-        ${isCartOpen ? "translate-x-0" : "translate-x-full"}
-      `}
+        className={`fixed top-0 right-0 h-full md:w-[452px] bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+          isCartOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+        role="dialog"
+        aria-label="Shopping cart"
+        aria-hidden={!isCartOpen}
       >
         {/* Header */}
-        <div className=" p-4 flex justify-between items-center border-b">
+        <div className="p-4 flex justify-between items-center border-b">
           <h2 className="text-xl font-semibold text-[#59432D]">Your Cart</h2>
           <button
             className="text-gray-500 hover:text-black text-2xl"
             onClick={() => dispatch(closeCart())}
+            aria-label="Close cart"
           >
             <FiX className="bg-[#59432D] p-1 rounded-full text-white" />
           </button>
         </div>
-        {/* You are €59,00 away from FREE SHIPPING */}
+
+        {/* Shipping Message */}
         <div className="bg-[#faf5ed] py-[10px] px-[20px] text-center">
           <p className="text-xs">
             You are €59,00 away from <span className="">FREE SHIPPING</span>
           </p>
         </div>
 
-        {/* empty cart */}
+        {/* Empty Cart Message */}
         <div className="flex flex-col justify-center items-center">
           <div
             className={`py-10 px-5 flex flex-col justify-center items-center text-center text-[#59432D] ${
@@ -83,24 +88,28 @@ const CartSlider = () => {
               onClick={() => dispatch(closeCart())}
               className="border-[2px] border-[#59432D] py-2 px-12 rounded-3xl m-[10px] hover:bg-[#8c663f] transition-colors duration-300 ease-in-out hover:text-white hover:border-none"
               type="button"
+              aria-label="Shop now"
             >
               <span className="text-xl font-medium w-full">Shop Now</span>
             </Link>
           </div>
 
-          {/* cart products */}
-          <div className="w-full py-5 px-5 ">
+          {/* Cart Products */}
+          <div className="w-full py-5 px-5">
             <ul className="w-full flex flex-1 flex-col gap-4">
               {cartItem.map((product) => (
                 <li
                   key={product.id}
-                  style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
+                  style={{
+                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                  }}
                   className="w-full flex items-center gap-x-2 p-2 rounded-xl"
                 >
                   <div className="rounded-lg overflow-hidden">
                     <img
                       src={product.images[0]}
                       alt={product.name}
+                      loading="lazy"
                       width={88}
                       height={100}
                     />
@@ -112,8 +121,9 @@ const CartSlider = () => {
                       </p>
                       <span>
                         <FiX
-                          className="text-xl bg-[#59432D] p-1 text-white rounded-full"
+                          className="text-xl bg-[#59432D] p-1 text-white rounded-full cursor-pointer"
                           onClick={() => dispatch(removeFromCart(product.id))}
+                          aria-label={`Remove ${product.name} from cart`}
                         />
                       </span>
                     </div>
@@ -128,6 +138,7 @@ const CartSlider = () => {
                             dispatch(decrementQuantity(product.id))
                           }
                           className="border-r border-black/2 h-6 w-9 flex justify-center items-center cursor-pointer"
+                          aria-label={`Decrease quantity of ${product.name}`}
                         >
                           <HiMinus className="font-semibold" />
                         </button>
@@ -140,6 +151,7 @@ const CartSlider = () => {
                             dispatch(incrementQuantity(product.id))
                           }
                           className="h-6 w-9 flex justify-center items-center cursor-pointer"
+                          aria-label={`Increase quantity of ${product.name}`}
                         >
                           <HiPlus className="font-extrabold" />
                         </button>
@@ -157,7 +169,8 @@ const CartSlider = () => {
             </ul>
           </div>
         </div>
-        {/* fixed checkout footer */}
+
+        {/* Fixed Checkout Footer */}
         <div
           className={`fixed bottom-0 left-0 w-full px-5 pt-3 pb-4 bg-[#59432D] text-white ${
             Array.isArray(cartItem) && cartItem.length > 0 ? "block" : "hidden"
@@ -170,11 +183,11 @@ const CartSlider = () => {
               <span className="line-through opacity-50">{`€ ${totalActualPrice}`}</span>
             </div>
           </div>
-          {/* checkout button */}
           <Link
             to={"/cart"}
             onClick={() => dispatch(closeCart())}
             className="border-2 border-white bg-[#f2983d] rounded-[7rem] w-full flex justify-center gap-3 items-center mb-4"
+            aria-label="Proceed to checkout"
           >
             <span className="text-xl font-semibold py-3 px-4">
               Proceed to Checkout

@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const CoffeeBenefits = () => {
   const coffeeBenefits = [
@@ -67,14 +68,14 @@ const CoffeeBenefits = () => {
                 </div>
               </div>
               {/*Upgrade your coffee button */}
-              <div className="px-[51px] pt-8">
+              <Link to={"/shop"} className="px-[51px] pt-8">
                 <Button
                   type="button"
                   textColor="text-white"
                   className="py-3 px-11 rounded-[5rem] w-full text-center"
                   children={"Upgrade My Coffee"}
                 />
-              </div>
+              </Link>
             </div>
           </div>
         </div>

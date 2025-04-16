@@ -14,7 +14,7 @@ const CartCheckout = () => {
   };
   useEffect(() => {
     console.log("Type of totalPrice:", typeof totalPrice); // Should be "number"
-    console.log("totalPrice:", totalPrice);
+    console.log("totalPrice:", totalPrice.toFixed(2));
   }, [totalPrice]);
 
   return (
@@ -84,7 +84,7 @@ const CartCheckout = () => {
             <div className="flex justify-between items-center">
               <p>Total</p>
               <span className="flex gap-1">
-                <p className="opacity-50">Eur</p> {`€${totalPrice}`}
+                <p className="opacity-50">Eur</p> {`€${totalPrice.toFixed(2)}`}
               </span>
             </div>
           </div>
@@ -103,7 +103,7 @@ const CartCheckout = () => {
               }`}
             />
           </div>
-          <span>{`€${totalPrice}`}</span>
+          <span>{`€${totalPrice.toFixed(2)}`}</span>
         </button>
 
         <div
@@ -291,7 +291,7 @@ const CartCheckout = () => {
               <p className="font-semibold">Total</p>
               <span className="flex gap-1">
                 <p className="opacity-50">Eur</p>
-                {`€${Number(totalPrice.toFixed(2))}`}
+                {`€${totalPrice.toFixed(2)}`}
               </span>
             </div>
           </div>

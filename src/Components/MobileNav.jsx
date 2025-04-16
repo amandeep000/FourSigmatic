@@ -33,18 +33,25 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
       className={`fixed top-[112px] left-0 right-0 w-full h-[calc(100vh-112px)] bg-slate-50 transition-transform duration-300 ease-in-out z-50 ${
         isMobilenavOpen ? "translate-x-0" : "-translate-x-full"
       }`}
+      aria-label="Mobile Navigation Menu"
     >
-      {/* Make this wrapper scrollable */}
       <div className="h-full overflow-y-auto px-5 py-4 space-y-6">
         {/* Close Button */}
         <div className="flex justify-start items-center">
-          <button onClick={() => setIsMobilenavOpen(false)} className="p-1">
+          <button
+            onClick={() => setIsMobilenavOpen(false)}
+            className="p-1"
+            aria-label="Close Mobile Menu"
+          >
             <RxCross2 className="w-6 h-6 text-[#59432D]" />
           </button>
         </div>
 
         {/* Accordion Section */}
-        <ul className="text-[#59432D] space-y-2">
+        <ul
+          className="text-[#59432D] space-y-2"
+          aria-label="Product Categories"
+        >
           {[
             { title: "Coffees", img: "Mobile_nav_coffees.avif" },
             { title: "Proteins", img: "Mobile_nav_Proteins.avif" },
@@ -53,9 +60,16 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
             <li
               key={i}
               className="flex justify-between items-center border-t border-black py-3"
+              aria-label={`${title} Category`}
             >
               <div className="flex items-center gap-3">
-                <img src={`/content/${img}`} alt={title} width={80} />
+                <img
+                  src={`/content/${img}`}
+                  alt={title}
+                  width={80}
+                  loading="lazy"
+                  aria-label={`${title} category image`}
+                />
                 <h2 className="text-xl font-semibold">{title}</h2>
               </div>
               <FaChevronDown className="text-black" />
@@ -67,6 +81,7 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
         <Link
           to="/shop"
           className="flex justify-center items-center border border-black rounded-3xl"
+          aria-label="Shop All Products"
         >
           <button
             className="px-6 py-3 text-[#59432D] font-semibold text-xl w-full hover:bg-[#59432D] hover:text-white transition duration-300 ease-in-out"
@@ -80,18 +95,27 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
         <ul
           onClick={handleClicks}
           className="text-[#59432D] text-xl font-semibold space-y-4 z-50"
+          aria-label="Navigation Links"
         >
           <li>
-            <Link to="/about">About Us</Link>
+            <Link to="/about" aria-label="Go to About Us page">
+              About Us
+            </Link>
           </li>
           <li>
-            <Link to="/shop">Shop</Link>
+            <Link to="/shop" aria-label="Go to Shop page">
+              Shop
+            </Link>
           </li>
           <li>
-            <Link to="/">Blog</Link>
+            <Link to="/" aria-label="Go to Blog">
+              Blog
+            </Link>
           </li>
           <li>
-            <Link to="/">Press</Link>
+            <Link to="/" aria-label="Go to Press section">
+              Press
+            </Link>
           </li>
         </ul>
 
@@ -99,14 +123,22 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
         <div
           onClick={handleClicks}
           className="space-y-4 text-[#59432D] font-semibold cursor-pointer z-50"
+          aria-label="Utility Links"
         >
-          <Link className="flex items-center gap-4">
+          <Link
+            className="flex items-center gap-4"
+            aria-label="Find Where to Buy"
+          >
             <FaMapMarkerAlt /> <span>Where to Buy</span>
           </Link>
-          <Link to={"/search"} className="flex items-center gap-4">
+          <Link
+            to="/search"
+            className="flex items-center gap-4"
+            aria-label="Search Products"
+          >
             <FaSearch /> <span>Search</span>
           </Link>
-          <Link className="flex items-center gap-4">
+          <Link className="flex items-center gap-4" aria-label="Go to Account">
             <FaUser /> <span>Account</span>
           </Link>
         </div>
