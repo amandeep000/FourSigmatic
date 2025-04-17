@@ -1,32 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
+import { useSelector } from "react-redux";
 import ProductCard from "./ProductCard";
-import { setProducts } from "./store/productSlice";
-import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
 const ProductShowcase = () => {
-  const dispatch = useDispatch();
-  const { products, isLoaded } = useSelector((state) => state.products);
+  const { products } = useSelector((state) => state.products);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
   // Fetch product data only if not loaded
-  useEffect(() => {
-    if (!isLoaded) {
-      fetch("/db.json")
-        .then((res) => res.json())
-        .then((data) => {
-          dispatch(setProducts(data.products));
-        })
-        .catch((error) => {
-          console.error("Error fetching data", error);
-        });
-    }
-  }, [dispatch, isLoaded]);
 
   return (
     <section className="relative w-full overflow-hidden">

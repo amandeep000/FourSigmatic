@@ -80,7 +80,7 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
         {/* Shop All Button */}
         <Link
           to="/shop"
-          className="flex justify-center items-center border border-black rounded-3xl"
+          className="flex justify-center items-center border border-black rounded-3xl overflow-hidden"
           aria-label="Shop All Products"
         >
           <button

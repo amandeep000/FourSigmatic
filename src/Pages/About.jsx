@@ -94,11 +94,11 @@ const About = () => {
               </picture>
             </div>
             <div className="container lg:w-1/2">
-              <div className="lg:max-w-[28rem] w-full text-[#59432D]">
+              <div className="lg:max-w-[32rem] w-full text-[#59432D]">
                 <h2 className="text-2xl font-semibold w-full mb-5 lg:text-[40px]">
                   Our Mission
                 </h2>
-                <p className="font-semibold w-full">
+                <p className="font-semibold w-full xl:text-2xl">
                   We want to help you feel your best. Whether that’s your body
                   or your mind, we believe that mushrooms are the key to living
                   a healthier and happier life. Here at Four Sigmatic, we use
@@ -129,11 +129,11 @@ const About = () => {
               </picture>
             </div>
             <div className="container lg:w-1/2 lg:order-1">
-              <div className="lg:max-w-[28rem] w-full text-[#59432D]">
+              <div className="lg:max-w-[32rem] w-full text-[#59432D]">
                 <h2 className="text-2xl font-semibold w-full mb-5 lg:text-[40px]">
                   Join Our Team
                 </h2>
-                <p className="font-semibold w-full">
+                <p className="font-semibold w-full xl:text-2xl">
                   We're a crew of parents, music enthusiasts, mushroom foragers,
                   world travelers, ice hockey fans, coffee aficionados, and
                   more. What we all have in common is a passion for elevating
