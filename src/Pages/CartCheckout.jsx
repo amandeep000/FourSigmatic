@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { HiChevronDown } from "react-icons/hi";
 import CreditCardForm from "../Components/CreditCardForm";
@@ -12,10 +12,6 @@ const CartCheckout = () => {
   const handleAccordion = () => {
     setIsActive((prev) => !prev);
   };
-  useEffect(() => {
-    console.log("Type of totalPrice:", typeof totalPrice); // Should be "number"
-    console.log("totalPrice:", totalPrice.toFixed(2));
-  }, [totalPrice]);
 
   return (
     <main className="flex flex-col items-center gap-3 lg:flex-row lg:justify-center lg:items-start lg:gap-10 px-4">

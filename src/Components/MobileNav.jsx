@@ -8,12 +8,9 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { closeCart } from "./store/cartSlice";
 
 const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
   const { products } = useSelector((state) => state.products);
-  const dispatch = useDispatch();
   const [isActive, setIsActive] = useState(null);
   const handleAccordian = (id) => {
     setIsActive((prevActive) => (prevActive === id ? null : id));
@@ -66,9 +63,8 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
             { title: "Protein", img: "Mobile_nav_Proteins.avif" },
             { title: "Supplement", img: "Mobile_nav_supplements.avif" },
           ].map(({ title, img }) => (
-            <>
+            <React.Fragment key={title}>
               <li
-                key={title}
                 onClick={() => handleAccordian(title)}
                 className={`flex justify-between items-center border-t border-black py-3`}
                 aria-label={`${title} Category`}
@@ -114,13 +110,9 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
                   {products
                     .filter((item) => item.category === title)
                     .map((product) => (
-                      <Link
-                        to={`/products/${product.id} 
-                      
-                      `}
-                      >
+                      <Link key={product.id} to={`/products/${product.id}`}>
                         <div
-                          onClick={dispatch(closeCart())}
+                          onClick={() => setIsMobilenavOpen(false)}
                           className="py-[6px] pr-4 flex justify-center items-center bg-[#f2e6ce] rounded-lg"
                         >
                           <img
@@ -135,7 +127,7 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
                     ))}
                 </div>
               </div>
-            </>
+            </React.Fragment>
           ))}
         </ul>
 
