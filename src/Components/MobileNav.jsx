@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import {
   FaChevronDown,
@@ -7,8 +7,17 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { closeCart } from "./store/cartSlice";
 
 const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
+  const { products } = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+  const [isActive, setIsActive] = useState(null);
+  const handleAccordian = (id) => {
+    setIsActive((prevActive) => (prevActive === id ? null : id));
+  };
   useEffect(() => {
     if (isMobilenavOpen) {
       document.body.style.overflow = "hidden";
@@ -27,9 +36,9 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
       setIsMobilenavOpen(false);
     }
   };
-
   return (
     <aside
+      data-lenis-prevent
       className={`fixed top-[112px] left-0 right-0 w-full h-[calc(100vh-112px)] bg-slate-50 transition-transform duration-300 ease-in-out z-50 ${
         isMobilenavOpen ? "translate-x-0" : "-translate-x-full"
       }`}
@@ -54,26 +63,79 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
         >
           {[
             { title: "Coffees", img: "Mobile_nav_coffees.avif" },
-            { title: "Proteins", img: "Mobile_nav_Proteins.avif" },
-            { title: "Supplements", img: "Mobile_nav_supplements.avif" },
-          ].map(({ title, img }, i) => (
-            <li
-              key={i}
-              className="flex justify-between items-center border-t border-black py-3"
-              aria-label={`${title} Category`}
-            >
-              <div className="flex items-center gap-3">
-                <img
-                  src={`/content/${img}`}
-                  alt={title}
-                  width={80}
-                  loading="lazy"
-                  aria-label={`${title} category image`}
+            { title: "Protein", img: "Mobile_nav_Proteins.avif" },
+            { title: "Supplement", img: "Mobile_nav_supplements.avif" },
+          ].map(({ title, img }) => (
+            <>
+              <li
+                key={title}
+                onClick={() => handleAccordian(title)}
+                className={`flex justify-between items-center border-t border-black py-3`}
+                aria-label={`${title} Category`}
+              >
+                <div className="flex items-center gap-3">
+                  <img
+                    src={`/content/${img}`}
+                    alt={title}
+                    width={80}
+                    loading="lazy"
+                    aria-label={`${title} category image`}
+                  />
+                  <h2 className="text-xl font-semibold">{title}</h2>
+                </div>
+                <FaChevronDown
+                  className={`text-black ${
+                    isActive === title ? "rotate-180" : "rotate-0"
+                  }`}
                 />
-                <h2 className="text-xl font-semibold">{title}</h2>
+              </li>
+              {/* mobile nav accordion */}
+              <div
+                className={`pt-[12px] pb-[30px] overflow-hidden ${
+                  isActive === title ? "h-auto opacity-100" : "h-0 hidden"
+                }`}
+              >
+                {/* shop button */}
+                <Link
+                  to={`/shop/${title}`}
+                  className={`flex justify-center items-center border border-black rounded-3xl overflow-hidden mb-9`}
+                  aria-label="Shop All Products"
+                >
+                  <button
+                    className="px-6 py-3 text-[#59432D] font-semibold text-xl w-full hover:bg-[#59432D] hover:text-white transition duration-300 ease-in-out"
+                    onClick={handleClicks}
+                  >
+                    Shop All {title}
+                  </button>
+                </Link>
+                <h2>{title}</h2>
+                {/* nav product cards */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
+                  {products
+                    .filter((item) => item.category === title)
+                    .map((product) => (
+                      <Link
+                        to={`/products/${product.id} 
+                      
+                      `}
+                      >
+                        <div
+                          onClick={dispatch(closeCart())}
+                          className="py-[6px] pr-4 flex justify-center items-center bg-[#f2e6ce] rounded-lg"
+                        >
+                          <img
+                            src={product.images[0]}
+                            alt={product.name}
+                            width={80}
+                            height={88}
+                          />
+                          <h3 className="text-[13px]">{product.name}</h3>
+                        </div>
+                      </Link>
+                    ))}
+                </div>
               </div>
-              <FaChevronDown className="text-black" />
-            </li>
+            </>
           ))}
         </ul>
 

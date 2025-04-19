@@ -26,7 +26,7 @@ const getNumericPrice = (price) => {
   return price;
 };
 
-// Optional extra safety helper
+// extra safety helper
 const clampCartValues = (state) => {
   state.totalQuantity = Math.max(0, state.totalQuantity);
   state.totalPrice = Math.max(0, state.totalPrice);

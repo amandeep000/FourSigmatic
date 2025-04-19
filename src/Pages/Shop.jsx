@@ -1,16 +1,17 @@
-import React from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import ShopProducts from "../Components/Shop/ShopProducts";
 import ShopProductCard from "../Components/Shop/ShopProductCard";
 
 const Shop = () => {
-  const { products } = useSelector((state) => state.products);
+  const { products, loading } = useSelector((state) => state.products);
+  const { category } = useParams();
+
   const categoriesData = [
     {
       name: "Coffees",
       title: "Coffees & Creamers",
-      paragraph: `Expect more from your morning cup. Start your day with more
-              energy, focus and a feel-good boost from mushrooms.`,
+      paragraph: `Expect more from your morning cup. Start your day with more energy, focus and a feel-good boost from mushrooms.`,
       component: ShopProducts,
     },
     {
@@ -30,31 +31,32 @@ const Shop = () => {
       component: ShopProducts,
     },
   ];
+
+  const matchedCategory = categoriesData.find((cat) => cat.name === category);
+  const filteredCategories = matchedCategory
+    ? [matchedCategory]
+    : categoriesData;
+
+  if (loading || !products || products.length === 0) {
+    return <p className="text-center py-10">Loading products...</p>;
+  }
+
   return (
     <div>
-      {categoriesData.map((categoryInfo) => {
+      {filteredCategories.map((categoryInfo) => {
         const filteredProducts = products.filter(
           (item) => item.category === categoryInfo.name
         );
-        if (categoryInfo.component === ShopProducts) {
-          return (
-            <ShopProducts
-              key={categoryInfo.name}
-              category_name={categoryInfo.name}
-              category_title={categoryInfo.title}
-              category_para={categoryInfo.paragraph}
-              product_category={filteredProducts}
-            />
-          );
-        } else if (categoryInfo.component === ShopProductCard) {
-          return (
-            <ShopProductCard
-              key={categoryInfo.name}
-              category_name={categoryInfo.name}
-              product_category={filteredProducts}
-            />
-          );
-        }
+        const Component = categoryInfo.component;
+        return (
+          <Component
+            key={categoryInfo.name}
+            category_name={categoryInfo.name}
+            category_title={categoryInfo.title}
+            category_para={categoryInfo.paragraph}
+            product_category={filteredProducts}
+          />
+        );
       })}
     </div>
   );

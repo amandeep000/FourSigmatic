@@ -1,13 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 
 const useLenis = () => {
+  const lenisRef = useRef(null);
+
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2, // Adjust scrolling speed
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth easing
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smooth: true,
     });
+
+    lenisRef.current = lenis;
 
     function raf(time) {
       lenis.raf(time);
@@ -17,9 +21,11 @@ const useLenis = () => {
     requestAnimationFrame(raf);
 
     return () => {
-      lenis.destroy(); // Cleanup on unmount
+      lenis.destroy();
     };
   }, []);
+
+  return lenisRef;
 };
 
 export default useLenis;
