@@ -104,7 +104,9 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
                     Shop All {title}
                   </button>
                 </Link>
-                <h2>{title}</h2>
+                <h2 className="text-[#59432D] text-lg font-semibold mb-2">
+                  {title}
+                </h2>
                 {/* nav product cards */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
                   {products

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa6";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, replace, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart, openCart } from "../Components/store/cartSlice";
 const detailsCoffee = [
@@ -19,6 +19,7 @@ const ProductsPage = ({ isModal = false }) => {
     "Delivery every 90 Days",
   ];
   const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
   const [sellingPlan, setSellingPlan] = useState("subscribe");
   const [product, setProduct] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState(selectedPlanData[0]);
@@ -40,14 +41,21 @@ const ProductsPage = ({ isModal = false }) => {
           (item) => item.id.toString() === id
         );
         setProduct(foundProduct);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("There is an error fetching data", error);
       });
-  }, []);
+  }, [id]);
   // to show loading product
+
+  if (isLoading) {
+    return (
+      <div className="w-full text-red-400 text-3xl text-center">Loading...</div>
+    );
+  }
   if (!product) {
-    return <div className="p-4 text-3xl text-red-700">Loading Product...</div>;
+    return <Navigate to={"/shop"} replace />;
   }
 
   const addToCartHandler = () => {
