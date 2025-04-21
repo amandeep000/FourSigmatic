@@ -48,7 +48,6 @@ const ProductsPage = ({ isModal = false }) => {
         );
         setProduct(foundProduct);
         setIsLoading(false);
-        console.log(foundProduct);
       })
       .catch((error) => {
         console.error("There is an error fetching data", error);
