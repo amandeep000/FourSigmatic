@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa6";
-import { Link, Navigate, replace, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart, openCart } from "../Components/store/cartSlice";
+import faqGroups from "../FAQData/faqdata";
+import { FiChevronDown } from "react-icons/fi";
 const detailsCoffee = [
   { title: "Roast", description: "Medium Roast" },
   { title: "Type", description: "Instant" },
@@ -18,6 +20,7 @@ const ProductsPage = ({ isModal = false }) => {
     "Delivery every 60 Days",
     "Delivery every 90 Days",
   ];
+  const [activeAccordion, setActiveAccordion] = useState(null);
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [sellingPlan, setSellingPlan] = useState("subscribe");
@@ -33,7 +36,10 @@ const ProductsPage = ({ isModal = false }) => {
   const handleDropdown = () => {
     setIsDropDownOpen(() => !isDropDownOpen);
   };
+
+  // fetching product data
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetch("/db.json")
       .then((response) => response.json())
       .then((data) => {
@@ -42,11 +48,14 @@ const ProductsPage = ({ isModal = false }) => {
         );
         setProduct(foundProduct);
         setIsLoading(false);
+        console.log(foundProduct);
       })
       .catch((error) => {
         console.error("There is an error fetching data", error);
       });
   }, [id]);
+  const matchedFaq = faqGroups.find((group) => group.id === product?.category);
+
   // to show loading product
 
   if (isLoading) {
@@ -348,6 +357,43 @@ const ProductsPage = ({ isModal = false }) => {
           ))}
         </div>
       )}
+
+      {/* FAQ's */}
+      <div className="py-24 px-5 lg:px-[50px]">
+        <h2 className="text-5xl text-[#59485D] mb-8">Frequently Asked</h2>
+        {matchedFaq?.faqs.map((faq, index) => (
+          <div className="w-full" key={index}>
+            <div className="w-full border-b border-[#59483D] group">
+              <button
+                className="py-8 flex justify-between items-center w-full"
+                onClick={() =>
+                  setActiveAccordion(index === activeAccordion ? null : index)
+                }
+              >
+                <span className="text-2xl font-semibold text-[#59432D] group-hover:underline transition-all duration-300 ease-in-out">
+                  {faq.question}
+                </span>
+                <span
+                  className={
+                    activeAccordion === index ? "rotate-0" : "rotate-180"
+                  }
+                >
+                  <FiChevronDown className="text-2xl" />
+                </span>
+              </button>
+              <div
+                className={`transition-all duration-500 ease-in-out text-[#59482D] ${
+                  activeAccordion === index
+                    ? "max-h-[500px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <p className="mb-8 text-lg"> {faq.answer}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
