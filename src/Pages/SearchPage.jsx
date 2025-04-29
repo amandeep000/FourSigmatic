@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { FaTimes } from "react-icons/fa";
 import ProductCard from "../Components/ProductCard";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const SearchPage = () => {
-  const [query, setQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("q") || "";
   const [allProducts, setAllProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   // fetch data
@@ -42,13 +43,20 @@ const SearchPage = () => {
             placeholder="Search"
             autoFocus
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+              if (value.trim()) {
+                setSearchParams({ q: value });
+              } else {
+                setSearchParams({});
+              }
+            }}
             className="w-full border-0 bg-transparent py-2 px-3 focus:outline-none focus:border-none caret-orange-500 lg:text-7xl font-semibold text-[#59432D]"
           />
           {query && (
             <button
               type="button"
-              onClick={() => setQuery("")}
+              onClick={() => setSearchParams({})}
               className="w-6 h-full lg:hidden pr-2"
             >
               <FaTimes fill="orange" />
