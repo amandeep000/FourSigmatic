@@ -4,7 +4,7 @@ import ShopProducts from "../Components/Shop/ShopProducts";
 import ShopProductCard from "../Components/Shop/ShopProductCard";
 
 const Shop = () => {
-  const { products, loading } = useSelector((state) => state.products);
+  const { products, isLoaded } = useSelector((state) => state.products);
   const { category } = useParams();
 
   const categoriesData = [
@@ -37,7 +37,7 @@ const Shop = () => {
     ? [matchedCategory]
     : categoriesData;
 
-  if (loading || !products || products.length === 0) {
+  if (!isLoaded || !products || products.length === 0) {
     return <p className="text-center py-10">Loading products...</p>;
   }
 
