@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { setProducts } from "./store/productSlice";
+import { fetchProducts } from "./store/productSlice";
 
 const UseInitialProducts = () => {
   const { isLoaded } = useSelector((state) => state.products);
@@ -8,14 +8,7 @@ const UseInitialProducts = () => {
 
   useEffect(() => {
     if (!isLoaded) {
-      fetch("/db.json")
-        .then((res) => res.json())
-        .then((data) => {
-          dispatch(setProducts(data.products));
-        })
-        .catch((error) => {
-          console.error("Error fetching data", error);
-        });
+      dispatch(fetchProducts());
     }
   }, [dispatch, isLoaded]);
 };

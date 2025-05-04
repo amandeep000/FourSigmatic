@@ -6,14 +6,8 @@ import {
 } from "react-router-dom";
 import { Layout } from "../index";
 import Home from "../../Pages/Home";
-// import Shop from "../../Pages/Shop";
-// import About from "../../Pages/About";
-// import SearchPage from "../../Pages/SearchPage";
-// import NotFound from "../../Pages/NotFound";
-// import ProductsPage from "../../Pages/ProductsPage";
-// import CartCheckout from "../../Pages/CartCheckout";
 
-// const Home = lazy(() => import("../../Pages/Home"));
+// code splitting with react lazy
 const Shop = lazy(() => import("../../Pages/Shop"));
 const About = lazy(() => import("../../Pages/About"));
 const SearchPage = lazy(() => import("../../Pages/SearchPage"));
