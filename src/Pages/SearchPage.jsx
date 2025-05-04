@@ -3,13 +3,12 @@ import { FaSearch } from "react-icons/fa";
 import { FaTimes } from "react-icons/fa";
 import ProductCard from "../Components/ProductCard";
 import { Link, useSearchParams } from "react-router-dom";
-import ShopProducts from "../Components/Shop/ShopProducts";
-
 const SearchPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("q") || "";
   const [allProducts, setAllProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [defaultProduct, setDefaultProduct] = useState();
   // fetch data
   useEffect(() => {
     fetch("/db.json")
@@ -19,6 +18,15 @@ const SearchPage = () => {
       })
       .catch((err) => console.error("Failed to fetch db.json", err));
   }, []);
+
+  useEffect(() => {
+    if (allProducts.length > 0) {
+      const bundle = allProducts.find((item) => item.id === 19);
+      setDefaultProduct(bundle);
+    }
+  }, [allProducts]);
+
+  useEffect(() => {}, []);
 
   // filter the products based on search
   useEffect(() => {
@@ -30,7 +38,6 @@ const SearchPage = () => {
         return product.name.toLowerCase().includes(lowerQuery);
       });
       setFilteredProducts(filtered);
-      console.log(filtered);
     }
   }, [query, allProducts]);
   return (
@@ -97,17 +104,17 @@ const SearchPage = () => {
       )}
 
       {/* starter kit and bundle */}
-      {/* <div className="mx-[30px] lg:mx-12">
+      {/* <div className="px-[30px] lg:px-12 mt-12">
         <div className="flex justify-between items-center mb-2">
-          <h1>Best Seller</h1>
+          <h1 className="text-4xl font-semibold text-[#59432D]">Best Seller</h1>
           <Link
             to={"/shop"}
             className="hidden lg:block lg:border lg:border-[#59432D] text-[#59432D] hover:bg-[#59432D] hover:text-white lg:rounded-3xl lg:px-5 lg:py-2 transition duration-300 ease-in-out"
           >
-            Shop All Products
+            <span className="text-"> Shop All Products</span>
           </Link>
         </div>
-        <ShopProducts />
+        {defaultProduct && <ProductCard product={defaultProduct} />}
       </div> */}
     </section>
   );
