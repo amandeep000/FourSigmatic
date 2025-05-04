@@ -45,7 +45,8 @@ const Shop = () => {
     <div>
       {filteredCategories.map((categoryInfo) => {
         const filteredProducts = products.filter(
-          (item) => item.category === categoryInfo.name
+          (item) =>
+            item.category.toLowerCase() === categoryInfo.name.toLowerCase()
         );
         const Component = categoryInfo.component;
         return (
