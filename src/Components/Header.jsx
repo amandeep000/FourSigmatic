@@ -67,7 +67,7 @@ const Header = () => {
         </div>
 
         <div className="flex-1 flex justify-end items-center">
-          <div className="hidden lg:flex justify-center items-center gap-10">
+          <div className="hidden lg:flex justify-center items-center gap-4 ">
             <Link to={"/search"} aria-label="Search">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ const Header = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="#59432D"
-                className="lg:size-7 cursor-pointer"
+                className="lg:size-11 cursor-pointer p-2 rounded-full hover:bg-[#FFE0C0] transition-all duration-300 ease-in-out"
                 aria-hidden="true"
               >
                 <path
@@ -92,7 +92,7 @@ const Header = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="#59432D"
-                className="lg:size-7"
+                className="lg:size-11 p-2 rounded-full hover:bg-[#FFE0C0] transition-all duration-300 ease-in-out cursor-pointer "
                 aria-hidden="true"
               >
                 <path
@@ -114,7 +114,7 @@ const Header = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="#59432D"
-                className="lg:size-7"
+                className="lg:size-11 p-2 rounded-full hover:bg-[#FFE0C0] transition-all duration-300 ease-in-out cursor-pointer"
                 aria-hidden="true"
               >
                 <path

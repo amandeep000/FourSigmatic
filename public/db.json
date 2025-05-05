@@ -8,7 +8,14 @@
       "currentPrice": "€12.99",
       "title": "Bestseller",
       "images": ["/coffees/coffee1_0.webp", "/coffees/coffee1_1.webp"],
-      "tags": ["Energy", "Bestseller", "Focus"]
+      "tags": ["Energy", "Bestseller", "Focus"],
+      "thumbGallery": [
+        "/coffees/coffee1_0.webp",
+        "/ThumbGallery/id1_2.webp",
+        "/ThumbGallery/id1_3.webp",
+        "/ThumbGallery/id1_4.webp",
+        "/ThumbGallery/id1_5.webp"
+      ]
     },
     {
       "id": 2,

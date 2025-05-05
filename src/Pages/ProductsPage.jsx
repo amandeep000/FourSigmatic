@@ -6,6 +6,11 @@ import { useDispatch } from "react-redux";
 import { addToCart, openCart } from "../Components/store/cartSlice";
 import faqGroups from "../FAQData/faqdata";
 import { FiChevronDown } from "react-icons/fi";
+import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Thumbs } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/thumbs";
 const detailsCoffee = [
   { title: "Roast", description: "Medium Roast" },
   { title: "Type", description: "Instant" },
@@ -20,6 +25,13 @@ const ProductsPage = ({ isModal = false }) => {
     "Delivery every 60 Days",
     "Delivery every 90 Days",
   ];
+  const images = [
+    "/coffees/coffee1_0.webp",
+    "/ThumbGallery/id1_2.webp",
+    "/ThumbGallery/id1_3.webp",
+    "/ThumbGallery/id1_4.webp",
+    "/ThumbGallery/id1_5.webp",
+  ];
   const [activeAccordion, setActiveAccordion] = useState(null);
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +41,7 @@ const ProductsPage = ({ isModal = false }) => {
   const [packActive, setPackActive] = useState(null);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const dispatch = useDispatch();
+  const [thumbSwiper, setThumbSwiper] = useState(null);
 
   const handleClick = (id) => {
     setPackActive(id);
@@ -72,14 +85,45 @@ const ProductsPage = ({ isModal = false }) => {
   };
   return (
     <section className="my-4">
-      <div className="flex flex-col gap-10 lg:flex-row px-[50px]">
+      <div className="flex flex-col gap-10 lg:flex-row px-[50px] lg:justify-center lg:place-items-center">
         {/* image wrapper */}
-        <div>
-          <img
-            src={product.images[0]}
-            alt={product.name}
-            className="object-cover object-center h-full w-full rounded-xl lg:w-[468px] lg:h-[468px]"
-          />
+        <div className="relative lg:max-w-[468px]">
+          <Swiper
+            modules={[Thumbs]}
+            thumbs={{ swiper: thumbSwiper }}
+            slidesPerView={1}
+          >
+            {images.map((src, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={src}
+                  alt=""
+                  className="object-cover object-center h-full w-full rounded-xl lg:w-[468px] lg:h-[468px]"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          {/* swiper for thumbs */}
+          <div className="absolute px-[50px] max-w-[468px] bottom-4 left-1/2 -translate-x-1/2 w-fit z-10">
+            <Swiper
+              onSwiper={setThumbSwiper}
+              spaceBetween={10}
+              slidesPerView={4}
+              watchSlidesProgress
+              modules={[Thumbs]}
+              className="cursor-pointer "
+            >
+              {images.map((src, index) => (
+                <SwiperSlide key={index} className="!w-12">
+                  <img
+                    src={src}
+                    alt=""
+                    className="w-full h-12 object-cover rounded-lg border-2 border-gray-300 hover:border-orange-300 cursor-pointer transition duration-300 ease-in-out"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
 
         {/* content wrapper */}

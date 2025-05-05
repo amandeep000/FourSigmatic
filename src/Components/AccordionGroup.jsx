@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Accordion from "./Accordion";
+import { Link } from "react-router-dom";
 
 const AccordionGroup = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -15,7 +16,9 @@ const AccordionGroup = () => {
           <span className="py-2 ">Coffees & Creamers</span>
           <span className="py-2 ">Protiens</span>
           <span className="py-2 ">Supplements</span>
-          <span className="py-2 ">Shop All</span>
+          <span className="py-2 block cursor-pointer hover:underline">
+            Shop All
+          </span>
         </div>
       </Accordion>
       <Accordion
