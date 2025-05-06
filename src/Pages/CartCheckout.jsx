@@ -80,7 +80,8 @@ const CartCheckout = () => {
             <div className="flex justify-between items-center">
               <p>Total</p>
               <span className="flex gap-1">
-                <p className="opacity-50">Eur</p> {`€${totalPrice.toFixed(2)}`}
+                <p className="opacity-50">Eur</p>{" "}
+                {`€${Number(totalPrice).toFixed(2)}`}
               </span>
             </div>
           </div>

@@ -36,7 +36,10 @@ const Experts = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-12 pl-6 lg:pl-8" aria-labelledby="experts-heading">
+    <section
+      className="py-12 md:pl-6 lg:pl-8"
+      aria-labelledby="experts-heading"
+    >
       <div className="max-w-full mx-auto text-center relative">
         <h2
           id="experts-heading"

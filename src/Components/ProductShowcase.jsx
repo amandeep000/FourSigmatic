@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import ProductCard from "./ProductCard";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,48 +11,17 @@ const ProductShowcase = () => {
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const [swiperReady, setSwiperReady] = useState(false);
 
-  // Fetch product data only if not loaded
+  useEffect(() => {
+    // Trigger re-render once refs are available
+    setSwiperReady(true);
+  }, []);
 
   return (
     <section className="relative w-full overflow-hidden">
       <div className="py-8 relative max-w-[100vw]">
-        {/* Product Slider */}
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={20}
-          slidesPerView={1.2}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onBeforeInit={(swiper) => {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-          }}
-          breakpoints={{
-            480: { slidesPerView: 1.4 },
-            640: { slidesPerView: 1.8 },
-            768: { slidesPerView: 2, spaceBetween: 24 },
-            820: { slidesPerView: 2.3, spaceBetween: 28 },
-            1024: { slidesPerView: 2.8, spaceBetween: 32 },
-            1440: { slidesPerView: 3.7, spaceBetween: 36 },
-            1920: { slidesPerView: 5, spaceBetween: 60 },
-          }}
-          className="!px-0"
-        >
-          {products.slice(0, 7).map((product) => (
-            <SwiperSlide key={product.id} className="flex justify-center">
-              <ProductCard
-                product={product}
-                width="w-[350px]"
-                height="h-[350px]"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        {/* Slider Navigation Buttons */}
+        {/* Navigation Buttons */}
         <button
           ref={prevRef}
           aria-label="Previous Slide"
@@ -67,6 +36,39 @@ const ProductShowcase = () => {
         >
           →
         </button>
+
+        {/* Swiper */}
+        {swiperReady && (
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={20}
+            slidesPerView={1.2}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            breakpoints={{
+              480: { slidesPerView: 1.4 },
+              640: { slidesPerView: 1.8 },
+              768: { slidesPerView: 2, spaceBetween: 24 },
+              820: { slidesPerView: 2.3, spaceBetween: 28 },
+              1024: { slidesPerView: 2.8, spaceBetween: 32 },
+              1440: { slidesPerView: 3.7, spaceBetween: 36 },
+              1920: { slidesPerView: 5, spaceBetween: 60 },
+            }}
+            className="!px-0"
+          >
+            {products.slice(0, 7).map((product) => (
+              <SwiperSlide key={product.id} className="flex justify-center">
+                <ProductCard
+                  product={product}
+                  width="w-[350px]"
+                  height="h-[350px]"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </div>
     </section>
   );

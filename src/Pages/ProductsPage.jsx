@@ -6,9 +6,8 @@ import { useDispatch } from "react-redux";
 import { addToCart, openCart } from "../Components/store/cartSlice";
 import faqGroups from "../FAQData/faqdata";
 import { FiChevronDown } from "react-icons/fi";
-import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Thumbs } from "swiper/modules";
+import { Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/thumbs";
 const detailsCoffee = [
@@ -25,13 +24,6 @@ const ProductsPage = ({ isModal = false }) => {
     "Delivery every 60 Days",
     "Delivery every 90 Days",
   ];
-  const images = [
-    "/coffees/coffee1_0.webp",
-    "/ThumbGallery/id1_2.webp",
-    "/ThumbGallery/id1_3.webp",
-    "/ThumbGallery/id1_4.webp",
-    "/ThumbGallery/id1_5.webp",
-  ];
   const [activeAccordion, setActiveAccordion] = useState(null);
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -42,6 +34,7 @@ const ProductsPage = ({ isModal = false }) => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const dispatch = useDispatch();
   const [thumbSwiper, setThumbSwiper] = useState(null);
+  const [productImages, setProductImages] = useState([]);
 
   const handleClick = (id) => {
     setPackActive(id);
@@ -66,6 +59,12 @@ const ProductsPage = ({ isModal = false }) => {
         console.error("There is an error fetching data", error);
       });
   }, [id]);
+  useEffect(() => {
+    if (product) {
+      const images = product?.thumbGallery;
+      setProductImages(images);
+    }
+  }, [product]);
   const matchedFaq = faqGroups.find((group) => group.id === product?.category);
 
   // to show loading product
@@ -93,7 +92,7 @@ const ProductsPage = ({ isModal = false }) => {
             thumbs={{ swiper: thumbSwiper }}
             slidesPerView={1}
           >
-            {images.map((src, index) => (
+            {productImages?.map((src, index) => (
               <SwiperSlide key={index}>
                 <img
                   src={src}
@@ -111,14 +110,18 @@ const ProductsPage = ({ isModal = false }) => {
               slidesPerView={4}
               watchSlidesProgress
               modules={[Thumbs]}
-              className="cursor-pointer "
+              allowTouchMove={false}
+              className="cursor-pointer"
+              breakpoints={{
+                320: { spaceBetween: 8 },
+              }}
             >
-              {images.map((src, index) => (
-                <SwiperSlide key={index} className="!w-12">
+              {productImages?.map((src, index) => (
+                <SwiperSlide key={index} className="!w-12 px-2">
                   <img
                     src={src}
                     alt=""
-                    className="w-full h-12 object-cover rounded-lg border-2 border-gray-300 hover:border-orange-300 cursor-pointer transition duration-300 ease-in-out"
+                    className="lg:h-10 h-8 object-cover rounded-lg border-2 border-gray-300 hover:border-orange-300 cursor-pointer transition duration-300 ease-in-out"
                   />
                 </SwiperSlide>
               ))}
@@ -127,7 +130,7 @@ const ProductsPage = ({ isModal = false }) => {
         </div>
 
         {/* content wrapper */}
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 ">
           <div className="flex flex-col gap-y-4">
             <div className="lg:flex justify-start items-center hidden">
               <h3 className="text-white text-sm bg-[#59432D] rounded-3xl px-3 py-1">
@@ -312,33 +315,6 @@ const ProductsPage = ({ isModal = false }) => {
               }`}</span>
             </button>
           </div>
-          {/* amazon link section */}
-          {isModal && (
-            <div className="flex flex-col justify-center items-center gap-y-3 text-[#8C663F]">
-              <div className="flex flex-col lg:flex-row justify-center items-center gap-3 mb-2">
-                <a
-                  href="https://www.amazon.com/stores/FourSigmatic/page/BFD5C04F-8BEE-465A-8B09-51EAD476D2DC?lp_asin=B0756D1D39&ref_=ast_bln&store_ref=bl_ast_dp_brandLogo_sto"
-                  target="_blank"
-                  className="flex justify-center "
-                >
-                  <span className="font-semibold text-lg pr-2 cursor-pointer">
-                    Also Available On
-                  </span>{" "}
-                  <img
-                    src="/content/Amazon_logo.svg"
-                    alt="Amazon logo"
-                    width={64}
-                    height={20}
-                    className="self-end cursor-pointer"
-                  />
-                </a>
-                <span className="font-semibold">Satisfaction Guaranteed</span>
-              </div>
-              <span className="font-semibold">
-                Usually ships within 24 hours
-              </span>
-            </div>
-          )}
         </div>
       </div>
       {/* contnet section */}
@@ -403,7 +379,9 @@ const ProductsPage = ({ isModal = false }) => {
 
       {/* FAQ's */}
       <div className="py-24 px-5 lg:px-[50px]">
-        <h2 className="text-5xl text-[#59485D] mb-8">Frequently Asked</h2>
+        <h2 className="md:text-5xl text-4xl font-semibold text-[#59485D] mb-8">
+          Frequently Asked
+        </h2>
         {matchedFaq?.faqs.map((faq, index) => (
           <div className="w-full" key={index}>
             <div className="w-full border-b border-[#59483D] group">
@@ -413,7 +391,7 @@ const ProductsPage = ({ isModal = false }) => {
                   setActiveAccordion(index === activeAccordion ? null : index)
                 }
               >
-                <span className="text-2xl font-semibold text-[#59432D] group-hover:underline transition-all duration-300 ease-in-out">
+                <span className="md:text-2xl text-xl text-start font-semibold text-[#59432D] group-hover:underline transition-all duration-300 ease-in-out">
                   {faq.question}
                 </span>
                 <span
@@ -431,7 +409,10 @@ const ProductsPage = ({ isModal = false }) => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="mb-8 text-lg"> {faq.answer}</p>
+                <p className="mb-8 text-base font-semibold md:text-lg">
+                  {" "}
+                  {faq.answer}
+                </p>
               </div>
             </div>
           </div>

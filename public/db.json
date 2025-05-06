@@ -25,7 +25,13 @@
       "currentPrice": "€8.99",
       "title": "New Arrival",
       "images": ["/coffees/coffee2_0.webp", "/coffees/coffee2_1.webp"],
-      "tags": ["Mood", "Refreshing", "Best Value"]
+      "tags": ["Mood", "Refreshing", "Best Value"],
+      "thumbGallery": [
+        "/coffees/coffee2_0.webp",
+        "/ThumbGallery/id2_2.webp",
+        "/ThumbGallery/id2_3.webp",
+        "/ThumbGallery/id2_4.webp"
+      ]
     },
     {
       "id": 3,
@@ -35,7 +41,13 @@
       "currentPrice": "€24.99",
       "title": "Bestseller",
       "images": ["/coffees/coffee13_0.webp", "/coffees/coffee3_1.webp"],
-      "tags": ["Focus", "Bestseller", "Mood"]
+      "tags": ["Focus", "Bestseller", "Mood"],
+      "thumbGallery": [
+        "/coffees/coffee13_0.webp",
+        "/ThumbGallery/id3_2.webp",
+        "/ThumbGallery/id3_3.webp",
+        "/ThumbGallery/id3_4.webp"
+      ]
     },
     {
       "id": 4,
@@ -45,7 +57,13 @@
       "currentPrice": "€29.99",
       "title": "New Arrival",
       "images": ["/coffees/coffee4_0.webp", "/coffees/coffee4_1.webp"],
-      "tags": ["Energy", "Refreshing", "Best Value"]
+      "tags": ["Energy", "Refreshing", "Best Value"],
+      "thumbGallery": [
+        "/coffees/coffee4_0.webp",
+        "/ThumbGallery/id4_2.webp",
+        "/ThumbGallery/id4_3.webp",
+        "/ThumbGallery/id4_4.webp"
+      ]
     },
     {
       "id": 5,
@@ -55,7 +73,13 @@
       "currentPrice": "€15.99",
       "title": "Bestseller",
       "images": ["/coffees/coffee5_0.webp", "/coffees/coffee5_1.webp"],
-      "tags": ["Focus", "Bestseller", "Best Value"]
+      "tags": ["Focus", "Bestseller", "Best Value"],
+      "thumbGallery": [
+        "/coffees/coffee5_0.webp",
+        "/ThumbGallery/id5_2.webp",
+        "/ThumbGallery/id5_3.webp",
+        "/ThumbGallery/id5_4.webp"
+      ]
     },
     {
       "id": 6,
@@ -65,7 +89,13 @@
       "currentPrice": "€11.99",
       "title": "New Arrival",
       "images": ["/coffees/coffee6_0.webp", "/coffees/coffee6_1.webp"],
-      "tags": ["Energy", "Mood", "Best Value"]
+      "tags": ["Energy", "Mood", "Best Value"],
+      "thumbGallery": [
+        "/coffees/coffee6_0.webp",
+        "/ThumbGallery/id6_2.webp",
+        "/ThumbGallery/id6_3.webp",
+        "/ThumbGallery/id6_4.webp"
+      ]
     },
     {
       "id": 7,
@@ -75,7 +105,13 @@
       "currentPrice": "€39.99",
       "title": "Bestseller",
       "images": ["/coffees/coffee7_0.webp", "/coffees/coffee7_1.webp"],
-      "tags": ["Bestseller", "Refreshing", "Focus"]
+      "tags": ["Bestseller", "Refreshing", "Focus"],
+      "thumbGallery": [
+        "/coffees/coffee7_0.webp",
+        "/ThumbGallery/id7_2.webp",
+        "/ThumbGallery/id7_3.webp",
+        "/ThumbGallery/id7_4.webp"
+      ]
     },
     {
       "id": 8,
@@ -85,7 +121,13 @@
       "currentPrice": "€49.99",
       "title": "New Arrival",
       "images": ["/coffees/coffee8_0.webp", "/coffees/coffee8_1.webp"],
-      "tags": ["Mood", "Energy", "Best Value"]
+      "tags": ["Mood", "Energy", "Best Value"],
+      "thumbGallery": [
+        "/coffees/coffee8_0.webp",
+        "/ThumbGallery/id8_2.webp",
+        "/ThumbGallery/id8_3.webp",
+        "/ThumbGallery/id8_4.webp"
+      ]
     },
     {
       "id": 9,
@@ -95,7 +137,13 @@
       "currentPrice": "€9.99",
       "title": "Bestseller",
       "images": ["/creamer/creamer1_0.webp", "/creamer/creamer1_1.webp"],
-      "tags": ["Best Value", "Refreshing", "Mood"]
+      "tags": ["Best Value", "Refreshing", "Mood"],
+      "thumbGallery": [
+        "/creamer/creamer1_0.webp",
+        "/ThumbGallery/creamer1_2.webp",
+        "/ThumbGallery/creamer1_3.webp",
+        "/ThumbGallery/creamer1_4.webp"
+      ]
     },
     {
       "id": 10,
@@ -105,7 +153,13 @@
       "currentPrice": "€8.99",
       "title": "New Arrival",
       "images": ["/creamer/creamer1_0.webp", "/creamer/creamer2_1.webp"],
-      "tags": ["Focus", "Energy", "Bestseller"]
+      "tags": ["Focus", "Energy", "Bestseller"],
+      "thumbGallery": [
+        "/creamer/creamer1_0.webp",
+        "/ThumbGallery/creamer2_2.webp",
+        "/ThumbGallery/creamer2_3.webp",
+        "/ThumbGallery/creamer2_4.webp"
+      ]
     },
     {
       "id": 11,
@@ -115,7 +169,13 @@
       "currentPrice": "€11.99",
       "title": "Bestseller",
       "images": ["/latte/latte1_0.webp", "/latte/latte1_1.webp"],
-      "tags": ["Mood", "Bestseller", "Best Value"]
+      "tags": ["Mood", "Bestseller", "Best Value"],
+      "thumbGallery": [
+        "/latte/latte1_0.webp",
+        "/ThumbGallery/latte_2.webp",
+        "/ThumbGallery/latte_3.webp",
+        "/ThumbGallery/latte_4.webp"
+      ]
     },
     {
       "id": 12,
@@ -125,7 +185,13 @@
       "currentPrice": "€34.99",
       "title": "Bestseller",
       "images": ["/Protien/protein1_0.webp", "/Protien/protein1_1.webp"],
-      "tags": ["Energy", "Focus", "Best Value"]
+      "tags": ["Energy", "Focus", "Best Value"],
+      "thumbGallery": [
+        "/Protien/protein1_0.webp",
+        "/ThumbGallery/Pid12_2.webp",
+        "/ThumbGallery/Pid12_3.webp",
+        "/ThumbGallery/Pid12_4.webp"
+      ]
     },
     {
       "id": 13,
@@ -135,7 +201,13 @@
       "currentPrice": "€39.99",
       "title": "New Arrival",
       "images": ["/Protien/protein2_0.webp", "/Protien/protein2_1.webp"],
-      "tags": ["Bestseller", "Refreshing", "Mood"]
+      "tags": ["Bestseller", "Refreshing", "Mood"],
+      "thumbGallery": [
+        "/Protien/protein2_0.webp",
+        "/ThumbGallery/Pid13_2.webp",
+        "/ThumbGallery/Pid13_3.webp",
+        "/ThumbGallery/Pid13_4.webp"
+      ]
     },
     {
       "id": 14,
@@ -148,7 +220,14 @@
         "/supplements/suplements1_0.webp",
         "/supplements/suplements1_1.webp"
       ],
-      "tags": ["Focus", "Energy", "Bestseller"]
+      "tags": ["Focus", "Energy", "Bestseller"],
+      "thumbGallery": [
+        "/supplements/suplements1_0.webp",
+        "/ThumbGallery/id11_2.webp",
+        "/ThumbGallery/id11_3.webp",
+        "/ThumbGallery/id11_4.webp",
+        "/ThumbGallery/id11_5.webp"
+      ]
     },
     {
       "id": 15,
@@ -161,7 +240,13 @@
         "/supplements/suplements2_0.webp",
         "/supplements/suplements2_1.webp"
       ],
-      "tags": ["Mood", "Refreshing", "Focus"]
+      "tags": ["Mood", "Refreshing", "Focus"],
+      "thumbGallery": [
+        "/supplements/suplements2_0.webp",
+        "/ThumbGallery/id12_2.webp",
+        "/ThumbGallery/id12_3.webp",
+        "/ThumbGallery/id12_4.webp"
+      ]
     },
     {
       "id": 16,
@@ -174,7 +259,13 @@
         "/supplements/suplements3_0.webp",
         "/supplements/suplements3_1.webp"
       ],
-      "tags": ["Energy", "Best Value", "Focus"]
+      "tags": ["Energy", "Best Value", "Focus"],
+      "thumbGallery": [
+        "/supplements/suplements3_0.webp",
+        "/ThumbGallery/id13_2.webp",
+        "/ThumbGallery/id13_3.webp",
+        "/ThumbGallery/id13_4.webp"
+      ]
     },
     {
       "id": 17,
@@ -187,7 +278,13 @@
         "/starter_kits/starter1_0.webp",
         "/starter_kits/starter1_0.webp"
       ],
-      "tags": ["Best Value", "Mood", "Bestseller"]
+      "tags": ["Best Value", "Mood", "Bestseller"],
+      "thumbGallery": [
+        "/starter_kits/starter1_0.webp",
+        "/ThumbGallery/1starter_2.webp",
+        "/ThumbGallery/1starter_3.webp",
+        "/ThumbGallery/1starter_3.webp"
+      ]
     },
     {
       "id": 18,
@@ -200,7 +297,13 @@
         "/starter_kits/starter2_0.webp",
         "/starter_kits/starter2_1.webp"
       ],
-      "tags": ["Focus", "Bestseller", "Energy"]
+      "tags": ["Focus", "Bestseller", "Energy"],
+      "thumbGallery": [
+        "/starter_kits/starter2_0.webp",
+        "/ThumbGallery/2starter_2.webp",
+        "/ThumbGallery/2starter_3.webp",
+        "/ThumbGallery/2starter_3.webp"
+      ]
     },
     {
       "id": 19,
@@ -210,7 +313,13 @@
       "currentPrice": "€18.99",
       "title": "Bestseller",
       "images": ["/starter_kits/bundle1.webp", "/starter_kits/bundle1.webp"],
-      "tags": ["Best Value", "Mood", "Refreshing"]
+      "tags": ["Best Value", "Mood", "Refreshing"],
+      "thumbGallery": [
+        "/starter_kits/bundle1.webp",
+        "/ThumbGallery/bundle_2.webp",
+        "/ThumbGallery/bundle_3.webp",
+        "/ThumbGallery/bundle_4.webp"
+      ]
     }
   ]
 }
