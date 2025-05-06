@@ -8,6 +8,7 @@ import { Suspense } from "react";
 function App() {
   UseInitialProducts();
   useLenis();
+
   return (
     <Suspense
       fallback={
@@ -16,7 +17,7 @@ function App() {
         </div>
       }
     >
-      <RouterProvider router={Router} />;
+      <RouterProvider router={Router} />
     </Suspense>
   );
 }

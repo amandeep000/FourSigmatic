@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header className="mx-auto w-full bg-[#f9f5ed] sticky top-0 z-50">
       <div>
-        <p className="text-[#59432D] text-center py-3 bg-[#FAE9C8]">
+        <p className="text-[#59432D] text-center text-[12px] lg:text-base py-3  bg-[#FAE9C8]">
           Feel The Difference In 7 Days Or Get Your Money Back.{" "}
           <Link to={"/shop"} className="underline" aria-label="Shop now">
             Shop Now

@@ -10,10 +10,7 @@ const Review = () => {
           earthiness."
         </h3>
         <div className="flex flex-col justify-center items-start mt-12">
-          <img
-            src="/public/content/logo-RollingStone.svg"
-            alt="Rolling Stone"
-          />
+          <img src="/content/logo-RollingStone.svg" alt="Rolling Stone" />
           <p className="text-sm mt-3 opacity-70 font-mono lg:text-base">
             The Authority on Music, Politics, and Culture
           </p>

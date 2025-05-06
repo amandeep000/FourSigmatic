@@ -36,12 +36,12 @@ const MobileNav = ({ isMobilenavOpen, setIsMobilenavOpen }) => {
   return (
     <aside
       data-lenis-prevent
-      className={`fixed top-[112px] left-0 right-0 w-full h-[calc(100vh-112px)] bg-slate-50 transition-transform duration-300 ease-in-out z-50 ${
+      className={`fixed top-[106px] left-0 right-0 w-full h-[calc(100vh-112px)] bg-slate-50 transition-transform duration-300 ease-in-out z-50 overflow-y-auto ${
         isMobilenavOpen ? "translate-x-0" : "-translate-x-full"
       }`}
       aria-label="Mobile Navigation Menu"
     >
-      <div className="h-full overflow-y-auto px-5 py-4 space-y-6">
+      <div className="h-full px-5 py-4 space-y-6">
         {/* Close Button */}
         <div className="flex justify-start items-center">
           <button
