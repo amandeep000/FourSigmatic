@@ -17,6 +17,7 @@ const CartSlider = () => {
   const cartItem = useSelector((state) => state.cart.cartItem);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
+  const [message, setMessage] = useState("");
   let [totalActualPrice, setTotalActualPrice] = useState(0);
 
   useEffect(() => {
@@ -29,6 +30,19 @@ const CartSlider = () => {
     setTotalActualPrice(total);
   }, [cartItem, totalActualPrice]);
 
+  useEffect(() => {
+    if (totalPrice) {
+      const price = parseFloat(totalPrice);
+      if (price >= 50) {
+        setMessage(`🎉 You've Unlocked Free Delivery! 🎉`);
+      } else {
+        const difference = (50 - price).toFixed(2);
+        setMessage(`Add $${difference} to get free delivery!`);
+      }
+    } else {
+      setMessage("");
+    }
+  }, [totalPrice]);
   return (
     <>
       {/* Overlay Backdrop */}
@@ -65,8 +79,8 @@ const CartSlider = () => {
 
         {/* Shipping Message */}
         <div className="bg-[#faf5ed] py-[10px] px-[20px] text-center">
-          <p className="text-xs">
-            You are €59,00 away from <span className="">FREE SHIPPING</span>
+          <p className="text-xs tracking-wider font-semibold text-[#59432D]">
+            {message}
           </p>
         </div>
 

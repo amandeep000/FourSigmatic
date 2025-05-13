@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/thumbs";
+import { setPackSize } from "../Components/store/productSlice";
 const detailsCoffee = [
   { title: "Roast", description: "Medium Roast" },
   { title: "Type", description: "Instant" },
@@ -26,18 +27,22 @@ const ProductsPage = ({ isModal = false }) => {
   ];
   const [activeAccordion, setActiveAccordion] = useState(null);
   const { id } = useParams();
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(true);
   const [sellingPlan, setSellingPlan] = useState("subscribe");
   const [product, setProduct] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState(selectedPlanData[0]);
   const [packActive, setPackActive] = useState(null);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-  const dispatch = useDispatch();
   const [thumbSwiper, setThumbSwiper] = useState(null);
   const [productImages, setProductImages] = useState([]);
 
-  const handleClick = (id) => {
+  const handleClick = (id, number) => {
     setPackActive(id);
+    if (id === Number(number)) {
+      dispatch(setPackSize(Number(number)));
+    }
+    console.log(packActive);
   };
   const handleDropdown = () => {
     setIsDropDownOpen(() => !isDropDownOpen);
@@ -82,6 +87,7 @@ const ProductsPage = ({ isModal = false }) => {
     dispatch(addToCart(product));
     dispatch(openCart());
   };
+
   return (
     <section className="my-4">
       <div className="flex flex-col gap-10 lg:flex-row px-[50px] lg:justify-center lg:place-items-center">
@@ -193,7 +199,7 @@ const ProductsPage = ({ isModal = false }) => {
                   <button
                     type="button"
                     key={index}
-                    onClick={() => handleClick(item.id)}
+                    onClick={() => handleClick(item.id, item.number)}
                     className={`flex flex-col flex-1 justify-center items-center border border-black pt-5 transition duration-300 ease-in-out rounded-md ${
                       packActive === item.id ? "bg-[#f2e6ce] shadow-md" : ""
                     }`}

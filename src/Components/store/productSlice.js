@@ -15,6 +15,7 @@ export const fetchProducts = createAsyncThunk(
 const initialState = {
   products: [],
   isLoaded: false,
+  packSize: 1,
 };
 
 const ProductSlice = createSlice({
@@ -24,6 +25,9 @@ const ProductSlice = createSlice({
     setProducts: (state, action) => {
       state.products = action.payload;
       state.isLoaded = true;
+    },
+    setPackSize: (state, action) => {
+      state.packSize = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -43,5 +47,5 @@ const ProductSlice = createSlice({
       });
   },
 });
-export const { setProducts } = ProductSlice.actions;
+export const { setProducts, setPackSize } = ProductSlice.actions;
 export default ProductSlice.reducer;
